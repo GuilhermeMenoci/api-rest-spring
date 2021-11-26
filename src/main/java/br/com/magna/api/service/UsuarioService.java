@@ -48,11 +48,13 @@ public class UsuarioService {
 	// Criando usuario
 	public UsuarioDto createUsuarioDto(UsuarioDto usuarioDto) throws NotFoundException {
 		try {
-			verificaUsuario(usuarioDto);
-
+			if(verificaUsuario(usuarioDto)) 
+				System.out.println("Usuario já cadastrado");
+			 else {
 			UsuarioEntity usuario = usuarioRepository.save(convertEntity(usuarioDto));
 			UsuarioDto usuarioDtoSave = convertDto(usuario);
 			return usuarioDtoSave;
+			}
 		} catch (Exception ex) {
 			ex.getStackTrace();
 			System.out.println("Usuario já cadastrado");
@@ -63,11 +65,8 @@ public class UsuarioService {
 	// Atualizando evento
 	public UsuarioDto update(String login, UsuarioDto usuarioDto) throws NotFoundException {
 		UsuarioEntity usuario = usuarioRepository.findByLogin(login);
-
 		UsuarioDto usuarioDtoAntigo = convertDto(usuario);
-
 		BeanUtils.copyProperties(usuarioDto, usuarioDtoAntigo, "login");
-
 		UsuarioEntity convertEntity = convertEntity(usuarioDto);
 		convertEntity.setId(usuario.getId());
 

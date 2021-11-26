@@ -29,25 +29,32 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 
-	// Listando todos os usuarios
+//	// Listando todos os usuarios com LIST
+//	@GetMapping
+//	public List<UsuarioDto> list() {
+//		List<UsuarioEntity> listUsuario = usuarioService.listEntity();
+//		return usuarioService.listDto(listUsuario);
+//	}
+
+	// Listando todos os usuarios com LIST
 	@GetMapping
 	public List<UsuarioDto> list() {
 		List<UsuarioEntity> listUsuario = usuarioService.listEntity();
 		return usuarioService.listDto(listUsuario);
 	}
-	
+
 	// Listando usuario por LOGIN
 	@GetMapping("/{login}")
 	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) throws NotFoundException {
 		try {
 			return ResponseEntity.ok(usuarioService.getLogin(login));
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			return ResponseEntity.notFound().build();
-			}
+		}
 	}
-	
+
 	// Adicionando usuario
 	@PostMapping
 	public ResponseEntity<UsuarioDto> post(@RequestBody @Valid UsuarioDto usuarioDto) throws NotFoundException {
@@ -60,29 +67,30 @@ public class UsuarioController {
 			return ResponseEntity.noContent().build();
 		}
 	}
-	
-	//Atualizando usuario
+
+	// Atualizando usuario
 	@PutMapping("/{login}")
 	@Transactional
-	public ResponseEntity<UsuarioDto> put(@PathVariable String login, @RequestBody UsuarioDto usuarioDto) throws NotFoundException{
+	public ResponseEntity<UsuarioDto> put(@PathVariable String login, @RequestBody UsuarioDto usuarioDto)
+			throws NotFoundException {
 		try {
 			UsuarioDto usuarioDtoUpdate = usuarioService.update(login, usuarioDto);
 			return ResponseEntity.ok(usuarioDtoUpdate);
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}
 	
-	//Deletando usuario
+	// Deletando usuario
 	@DeleteMapping("/{login}")
 	@Transactional
-	public ResponseEntity<UsuarioDto> delete(@PathVariable String login) throws NotFoundException{
+	public ResponseEntity<UsuarioDto> delete(@PathVariable String login) throws NotFoundException {
 		try {
 			usuarioService.delete(login);
 			return ResponseEntity.ok().build();
-		} catch(NotFoundException ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			return ResponseEntity.notFound().build();

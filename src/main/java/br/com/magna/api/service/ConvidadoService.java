@@ -33,9 +33,9 @@ public class ConvidadoService {
 		ConvidadoEntity convidado = convidadoRepository.findByCpf(cpf);
 		ConvidadoDto convidadoDto = convertDto(convidado);
 
-		if (convidadoDto == null) {
-			throw new NotFoundException();
-		}
+//		if (convidadoDto == null) {
+//			throw new NotFoundException();
+//		}
 		return convidadoDto;
 	}
 
@@ -45,7 +45,7 @@ public class ConvidadoService {
 		return verificaConvidado;
 	}
 
-//	// Criando usuario
+//	// Criando convidado
 //	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
 //		verificaConvidado(convidadoDto);
 //		ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
@@ -53,13 +53,16 @@ public class ConvidadoService {
 //		return convidadoDtoSave;
 //	}
 	
-	// Criando usuario
+	// Criando convidado
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
-		verificaConvidado(convidadoDto);
-		
+		if(verificaConvidado(convidadoDto)) 
+			System.out.println("Convidado já cadastrado");
+		 else {
 		ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
 		ConvidadoDto convidadoDtoSave = convertDto(convidado);
 		return convidadoDtoSave;
+		}
+		return null;
 	}
 
 	// Atualizando convidado
@@ -73,16 +76,8 @@ public class ConvidadoService {
 		return convertDto(convidadoAtualizado);
 	}
 
-	// Deletando um usuario
+	// Deletando um convidado
 	public void delete(String cpf) throws NotFoundException {
-//		try {
-//			ConvidadoDto convidadoDto = getCpf(cpf);
-//			if (convidadoDto == null) {
-//				throw new NotFoundException();
-//			}
-//		} catch (Exception ex) {
-//			ex.printStackTrace();
-//		}
 		convidadoRepository.deleteByCpf(cpf);
 	}
 

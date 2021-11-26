@@ -42,10 +42,14 @@ public class EventoService {
 
 	// Criando um evento
 	public EventoDto createEventoDto(EventoDto eventoDto) throws NotFoundException {
-		verificaEvento(eventoDto);
+		if(verificaEvento(eventoDto))
+			System.out.println("Evento já cadastrado");
+		else {
 		EventoEntity evento = eventoRepository.save(convertEntity(eventoDto));
 		EventoDto eventoDtoSave = convertDto(evento);
 		return eventoDtoSave;
+		}
+		return null;
 	}
 
 	// Atualizando evento
