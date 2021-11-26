@@ -1,12 +1,12 @@
 package br.com.magna.api.controller;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.api.dto.ConvidadoDto;
-import br.com.magna.api.entity.ConvidadoEntity;
 import br.com.magna.api.service.ConvidadoService;
 
 @RestController
@@ -29,23 +28,29 @@ public class ConvidadoController {
 	@Autowired
 	private ConvidadoService convidadoService;
 
-	// Listando todos os convidados
+//	// Listando todos os convidados
+//	@GetMapping
+//	public List<ConvidadoDto> list() {
+//		List<ConvidadoEntity> listConvidado= convidadoService.listEntity();
+//		return convidadoService.listDto(listConvidado);
+//	}
+
+	// Listando todos os convidados com Page
 	@GetMapping
-	public List<ConvidadoDto> list() {
-		List<ConvidadoEntity> listConvidado= convidadoService.listEntity();
-		return convidadoService.listDto(listConvidado);
+	public ResponseEntity<Page<ConvidadoDto>> list(Pageable pageable) {
+		return ResponseEntity.ok(convidadoService.listEntity(pageable));
 	}
-	
+
 	// Listando convidados por CPF
 	@GetMapping("/{cpf}")
 	public ResponseEntity<ConvidadoDto> listCpf(@PathVariable String cpf) throws NotFoundException {
 		try {
 			return ResponseEntity.ok(convidadoService.getCpf(cpf));
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			return ResponseEntity.notFound().build();
-			}
+		}
 	}
 
 	// Adicionando convidados
@@ -61,34 +66,34 @@ public class ConvidadoController {
 			return ResponseEntity.noContent().build();
 		}
 	}
-	
-	//Atualizando convidado
+
+	// Atualizando convidado
 	@PutMapping("/{cpf}")
 	@Transactional
-	public ResponseEntity<ConvidadoDto> put(@PathVariable String cpf, @RequestBody ConvidadoDto convidadoDto) throws NotFoundException{
+	public ResponseEntity<ConvidadoDto> put(@PathVariable String cpf, @RequestBody ConvidadoDto convidadoDto)
+			throws NotFoundException {
 		try {
 			ConvidadoDto convidadoDtoUpdate = convidadoService.update(cpf, convidadoDto);
 			return ResponseEntity.ok(convidadoDtoUpdate);
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 			System.out.println("Evento não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
-	//Deletando convidados
+
+	// Deletando convidados
 	@DeleteMapping("/{cpf}")
 	@Transactional
-	public ResponseEntity<ConvidadoDto> delete(@PathVariable String cpf){
+	public ResponseEntity<ConvidadoDto> delete(@PathVariable String cpf) {
 		try {
 			convidadoService.delete(cpf);
 			return ResponseEntity.ok().build();
-		} catch(NotFoundException ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Convidado não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
-	
+
 }

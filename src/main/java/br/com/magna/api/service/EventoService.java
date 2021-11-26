@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.magna.api.dto.EventoDto;
@@ -21,10 +23,16 @@ public class EventoService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	// Listando todos os eventos
-	public List<EventoEntity> listEntity() {
-		List<EventoEntity> evento = eventoRepository.findAll();
-		return evento;
+//	// Listando todos os eventos
+//	public List<EventoEntity> listEntity() {
+//		List<EventoEntity> evento = eventoRepository.findAll();
+//		return evento;
+//	}
+
+	// Listando todos os eventos com Page
+	public Page<EventoDto> listEntity(Pageable pageable) {
+		Page<EventoEntity> evento = eventoRepository.findAll(pageable);
+		return evento.map(item -> modelMapper.map(item, EventoDto.class));
 	}
 
 	// Listando evento por codigo
@@ -42,12 +50,12 @@ public class EventoService {
 
 	// Criando um evento
 	public EventoDto createEventoDto(EventoDto eventoDto) throws NotFoundException {
-		if(verificaEvento(eventoDto))
+		if (verificaEvento(eventoDto))
 			System.out.println("Evento já cadastrado");
 		else {
-		EventoEntity evento = eventoRepository.save(convertEntity(eventoDto));
-		EventoDto eventoDtoSave = convertDto(evento);
-		return eventoDtoSave;
+			EventoEntity evento = eventoRepository.save(convertEntity(eventoDto));
+			EventoDto eventoDtoSave = convertDto(evento);
+			return eventoDtoSave;
 		}
 		return null;
 	}

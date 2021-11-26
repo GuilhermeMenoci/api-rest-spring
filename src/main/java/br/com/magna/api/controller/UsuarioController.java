@@ -1,12 +1,12 @@
 package br.com.magna.api.controller;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.api.dto.UsuarioDto;
-import br.com.magna.api.entity.UsuarioEntity;
 import br.com.magna.api.service.UsuarioService;
 
 @RestController
@@ -36,11 +35,10 @@ public class UsuarioController {
 //		return usuarioService.listDto(listUsuario);
 //	}
 
-	// Listando todos os usuarios com LIST
+	// Listando todos os usuarios com Page
 	@GetMapping
-	public List<UsuarioDto> list() {
-		List<UsuarioEntity> listUsuario = usuarioService.listEntity();
-		return usuarioService.listDto(listUsuario);
+	public ResponseEntity<Page<UsuarioDto>> list(Pageable pageable) {
+		return ResponseEntity.ok(usuarioService.listEntity(pageable));
 	}
 
 	// Listando usuario por LOGIN

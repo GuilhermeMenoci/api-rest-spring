@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.magna.api.dto.UsuarioDto;
@@ -22,10 +24,16 @@ public class UsuarioService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	// Listando todos os usuarios Entity
-	public List<UsuarioEntity> listEntity() {
-		List<UsuarioEntity> user = usuarioRepository.findAll();
-		return user;
+//	// Listando todos os usuarios Entity
+//	public List<UsuarioEntity> listEntity() {
+//		List<UsuarioEntity> user = usuarioRepository.findAll();
+//		return user;
+//	}
+	
+	//Listando todos os usuarios com Page
+	public Page<UsuarioDto> listEntity(Pageable pageable) {
+		Page<UsuarioEntity> usuario = usuarioRepository.findAll(pageable);
+		return usuario.map(item -> modelMapper.map(item, UsuarioDto.class));
 	}
 
 	// Listando usuario por login

@@ -1,12 +1,12 @@
 package br.com.magna.api.controller;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -19,37 +19,42 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.api.dto.EventoDto;
-import br.com.magna.api.entity.EventoEntity;
 import br.com.magna.api.service.EventoService;
 
 @RestController
 @RequestMapping("/eventos")
 public class EventoController {
-	
-	//Injeção de dependencia
+
+	// Injeção de dependencia
 	@Autowired
 	private EventoService eventoService;
-	
-	//Listando todos os eventos
+
+//	//Listando todos os eventos
+//	@GetMapping
+//	public List<EventoDto> list(){
+//		List<EventoEntity> listEventos = eventoService.listEntity();
+//		return eventoService.listDto(listEventos);
+//	}
+
+	// Listando todos os usuarios com Page
 	@GetMapping
-	public List<EventoDto> list(){
-		List<EventoEntity> listEventos = eventoService.listEntity();
-		return eventoService.listDto(listEventos);
+	public ResponseEntity<Page<EventoDto>> list(Pageable pageable) {
+		return ResponseEntity.ok(eventoService.listEntity(pageable));
 	}
-	
+
 	// Listando usuario por CODIGO
 	@GetMapping("/{codigo}")
 	public ResponseEntity<EventoDto> listCodigo(@PathVariable Long codigo) throws NotFoundException {
 		try {
 			return ResponseEntity.ok(eventoService.getCodigo(codigo));
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
-	//Adicionando eventos
+
+	// Adicionando eventos
 	@PostMapping
 	public ResponseEntity<EventoDto> post(@RequestBody @Valid EventoDto eventoDto) throws NotFoundException {
 		try {
@@ -61,29 +66,30 @@ public class EventoController {
 			return ResponseEntity.noContent().build();
 		}
 	}
-	
-	//Atualizando evento
+
+	// Atualizando evento
 	@PutMapping("/{codigo}")
 	@Transactional
-	public ResponseEntity<EventoDto> put(@PathVariable Long codigo, @RequestBody EventoDto eventoDto) throws NotFoundException{
+	public ResponseEntity<EventoDto> put(@PathVariable Long codigo, @RequestBody EventoDto eventoDto)
+			throws NotFoundException {
 		try {
 			EventoDto eventoDtoUpdate = eventoService.update(codigo, eventoDto);
 			return ResponseEntity.ok(eventoDtoUpdate);
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.getMessage();
 			System.out.println("Evento não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
-	//Deletando evento
+
+	// Deletando evento
 	@DeleteMapping("/{codigo}")
 	@Transactional
-	public ResponseEntity<EventoDto> delete(@PathVariable Long codigo){
+	public ResponseEntity<EventoDto> delete(@PathVariable Long codigo) {
 		try {
 			eventoService.delete(codigo);
 			return ResponseEntity.ok().build();
-		} catch(NotFoundException ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Evento não encontrado");
 			return ResponseEntity.notFound().build();

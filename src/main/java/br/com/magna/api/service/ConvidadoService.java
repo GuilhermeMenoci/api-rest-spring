@@ -7,6 +7,8 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import br.com.magna.api.dto.ConvidadoDto;
@@ -22,10 +24,16 @@ public class ConvidadoService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	// Listando todos os usuarios Entity
-	public List<ConvidadoEntity> listEntity() {
-		List<ConvidadoEntity> convidado = convidadoRepository.findAll();
-		return convidado;
+//	// Listando todos os usuarios Entity
+//	public List<ConvidadoEntity> listEntity() {
+//		List<ConvidadoEntity> convidado = convidadoRepository.findAll();
+//		return convidado;
+//	}
+
+	// Listando todos os convidados com Page
+	public Page<ConvidadoDto> listEntity(Pageable pageable) {
+		Page<ConvidadoEntity> convidado = convidadoRepository.findAll(pageable);
+		return convidado.map(item -> modelMapper.map(item, ConvidadoDto.class));
 	}
 
 	// Listando usuario por CPF
@@ -52,15 +60,15 @@ public class ConvidadoService {
 //		ConvidadoDto convidadoDtoSave = convertDto(convidado);
 //		return convidadoDtoSave;
 //	}
-	
+
 	// Criando convidado
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
-		if(verificaConvidado(convidadoDto)) 
+		if (verificaConvidado(convidadoDto))
 			System.out.println("Convidado já cadastrado");
-		 else {
-		ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
-		ConvidadoDto convidadoDtoSave = convertDto(convidado);
-		return convidadoDtoSave;
+		else {
+			ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
+			ConvidadoDto convidadoDtoSave = convertDto(convidado);
+			return convidadoDtoSave;
 		}
 		return null;
 	}
