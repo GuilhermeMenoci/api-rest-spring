@@ -1,4 +1,4 @@
-package br.com.magna.config;
+package br.com.magna.api.config;
 
 public class Configuration {
 
