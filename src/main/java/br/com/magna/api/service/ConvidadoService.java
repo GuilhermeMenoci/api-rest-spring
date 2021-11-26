@@ -1,0 +1,107 @@
+package br.com.magna.api.service;
+
+import java.util.List;
+import java.util.stream.Collectors;
+
+import org.modelmapper.ModelMapper;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
+import org.springframework.stereotype.Service;
+
+import br.com.magna.api.dto.ConvidadoDto;
+import br.com.magna.api.entity.ConvidadoEntity;
+import br.com.magna.api.repository.ConvidadoRepository;
+
+@Service
+public class ConvidadoService {
+
+	@Autowired
+	private ConvidadoRepository convidadoRepository;
+
+	@Autowired
+	private ModelMapper modelMapper;
+
+	// Listando todos os usuarios Entity
+	public List<ConvidadoEntity> listEntity() {
+		List<ConvidadoEntity> convidado = convidadoRepository.findAll();
+		return convidado;
+	}
+
+	// Listando usuario por CPF
+	public ConvidadoDto getCpf(String cpf) throws NotFoundException {
+		ConvidadoEntity convidado = convidadoRepository.findByCpf(cpf);
+		ConvidadoDto convidadoDto = convertDto(convidado);
+
+		if (convidadoDto == null) {
+			throw new NotFoundException();
+		}
+		return convidadoDto;
+	}
+
+	// Verificando se o convidado já tem um cadastro
+	public Boolean verificaConvidado(ConvidadoDto cpfConvidado) throws NotFoundException {
+		Boolean verificaConvidado = convidadoRepository.existsByCpf(cpfConvidado.getCpf());
+		return verificaConvidado;
+	}
+
+//	// Criando usuario
+//	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
+//		verificaConvidado(convidadoDto);
+//		ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
+//		ConvidadoDto convidadoDtoSave = convertDto(convidado);
+//		return convidadoDtoSave;
+//	}
+	
+	// Criando usuario
+	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
+		verificaConvidado(convidadoDto);
+		
+		ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
+		ConvidadoDto convidadoDtoSave = convertDto(convidado);
+		return convidadoDtoSave;
+	}
+
+	// Atualizando convidado
+	public ConvidadoDto update(String cpf, ConvidadoDto convidadoDto) throws NotFoundException {
+		ConvidadoEntity convidado = convidadoRepository.findByCpf(cpf);
+		ConvidadoDto convidadoDtoAntigo = convertDto(convidado);
+		BeanUtils.copyProperties(convidadoDto, convidadoDtoAntigo, "cpf");
+		ConvidadoEntity convertEntity = convertEntity(convidadoDto);
+		convertEntity.setId(convidado.getId());
+		ConvidadoEntity convidadoAtualizado = convidadoRepository.save(convertEntity);
+		return convertDto(convidadoAtualizado);
+	}
+
+	// Deletando um usuario
+	public void delete(String cpf) throws NotFoundException {
+//		try {
+//			ConvidadoDto convidadoDto = getCpf(cpf);
+//			if (convidadoDto == null) {
+//				throw new NotFoundException();
+//			}
+//		} catch (Exception ex) {
+//			ex.printStackTrace();
+//		}
+		convidadoRepository.deleteByCpf(cpf);
+	}
+
+	// CONVERSORES//
+
+	// Conversor ModelMapper de Entity para Dto
+	public ConvidadoDto convertDto(ConvidadoEntity convidado) {
+		return modelMapper.map(convidado, ConvidadoDto.class);
+	}
+
+	// Conversor ModelMapper de Entity para Dto
+	public ConvidadoEntity convertEntity(ConvidadoDto convidado) {
+		return modelMapper.map(convidado, ConvidadoEntity.class);
+	}
+
+	// Convertando a lista de Entity para Dto
+	public List<ConvidadoDto> listDto(List<ConvidadoEntity> convidado) {
+		List<ConvidadoDto> convidados = convidado.stream().map(ConvidadoDto::new).collect(Collectors.toList());
+		return convidados;
+	}
+
+}
