@@ -237,3 +237,187 @@
 2021-11-27 17:36:13,402 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 9 ms
 2021-11-27 17:36:13,464 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-1} Evento com codigo: 12 encontrado
 2021-11-27 17:36:52,699 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-3} Evento com codigo: 12 atualizado
+2021-11-27 18:26:26,970 WARN com.zaxxer.hikari.pool.HikariPool {HikariPool-1 housekeeper} HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=39m6s252ms542µs100ns).
+2021-11-27 18:33:31,311 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(28)-127.0.0.1} Application shutdown requested.
+2021-11-27 18:33:31,357 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {RMI TCP Connection(28)-127.0.0.1} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:33:31,357 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(28)-127.0.0.1} HikariPool-1 - Shutdown initiated...
+2021-11-27 18:33:31,375 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(28)-127.0.0.1} HikariPool-1 - Shutdown completed.
+2021-11-27 18:33:42,214 INFO br.com.magna.api.ApiApplication {main} Iniciando API
+2021-11-27 18:33:42,534 INFO br.com.magna.api.ApiApplication {restartedMain} Iniciando API
+2021-11-27 18:33:43,026 INFO org.hibernate.validator.internal.util.Version {background-preinit} HV000001: Hibernate Validator 6.2.0.Final
+2021-11-27 18:33:43,031 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 13104 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-27 18:33:43,031 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-27 18:33:43,031 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-27 18:33:43,093 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-27 18:33:43,093 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-27 18:33:44,207 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 18:33:44,286 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 66 ms. Found 3 JPA repository interfaces.
+2021-11-27 18:33:45,296 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-27 18:33:45,309 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:33:45,310 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-27 18:33:45,310 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-27 18:33:45,444 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-27 18:33:45,444 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 2350 ms
+2021-11-27 18:33:45,634 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 18:33:45,697 INFO org.hibernate.Version {restartedMain} HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-11-27 18:33:45,978 INFO org.hibernate.annotations.common.Version {restartedMain} HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-27 18:33:46,110 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Starting...
+2021-11-27 18:33:46,444 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Start completed.
+2021-11-27 18:33:46,469 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 18:33:47,688 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 18:33:47,701 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:33:48,661 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 18:33:49,155 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-27 18:33:49,179 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:33:49,207 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-27 18:33:49,220 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 6.677 seconds (JVM running for 8.485)
+2021-11-27 18:33:49,224 INFO br.com.magna.api.ApiApplication {restartedMain} API iniciada
+2021-11-27 18:34:03,633 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-2} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-27 18:34:03,634 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-2} Initializing Servlet 'dispatcherServlet'
+2021-11-27 18:34:03,636 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-2} Completed initialization in 2 ms
+2021-11-27 18:35:12,335 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-5} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-27 18:36:52,641 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver {http-nio-8091-exec-8} Resolved [org.springframework.http.converter.HttpMessageNotReadableException: JSON parse error: Cannot construct instance of `br.com.magna.api.entity.EventoEntity` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (1); nested exception is com.fasterxml.jackson.databind.exc.MismatchedInputException: Cannot construct instance of `br.com.magna.api.entity.EventoEntity` (although at least one Creator exists): no int/Int-argument constructor/factory method to deserialize from Number value (1)<LF> at [Source: (PushbackInputStream); line: 4, column: 15] (through reference chain: br.com.magna.api.dto.UsuarioDto["evento"])]
+2021-11-27 18:39:38,035 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-5} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:39:38,041 INFO com.zaxxer.hikari.HikariDataSource {Thread-5} HikariPool-1 - Shutdown initiated...
+2021-11-27 18:39:38,059 INFO com.zaxxer.hikari.HikariDataSource {Thread-5} HikariPool-1 - Shutdown completed.
+2021-11-27 18:39:38,172 INFO br.com.magna.api.ApiApplication {restartedMain} Iniciando API
+2021-11-27 18:39:38,250 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 13104 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-27 18:39:38,250 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-27 18:39:38,250 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-27 18:39:38,523 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 18:39:38,547 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+2021-11-27 18:39:38,664 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-27 18:39:38,666 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:39:38,666 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-27 18:39:38,666 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-27 18:39:38,693 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-27 18:39:38,693 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 440 ms
+2021-11-27 18:39:38,736 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 18:39:38,740 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-2 - Starting...
+2021-11-27 18:39:38,873 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-2 - Start completed.
+2021-11-27 18:39:38,874 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 18:39:39,087 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 18:39:39,087 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:39:39,392 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 18:39:39,542 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-27 18:39:39,557 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:39:39,559 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-27 18:39:39,565 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.379 seconds (JVM running for 358.83)
+2021-11-27 18:39:39,567 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-27 18:39:39,568 INFO br.com.magna.api.ApiApplication {restartedMain} API iniciada
+2021-11-27 18:41:00,866 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-7} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:41:00,870 INFO com.zaxxer.hikari.HikariDataSource {Thread-7} HikariPool-2 - Shutdown initiated...
+2021-11-27 18:41:00,882 INFO com.zaxxer.hikari.HikariDataSource {Thread-7} HikariPool-2 - Shutdown completed.
+2021-11-27 18:41:00,987 INFO br.com.magna.api.ApiApplication {restartedMain} Iniciando API
+2021-11-27 18:41:01,037 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 13104 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-27 18:41:01,037 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-27 18:41:01,037 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-27 18:41:01,250 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 18:41:01,266 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 15 ms. Found 3 JPA repository interfaces.
+2021-11-27 18:41:01,384 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-27 18:41:01,385 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:41:01,386 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-27 18:41:01,386 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-27 18:41:01,415 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-27 18:41:01,415 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 373 ms
+2021-11-27 18:41:01,479 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 18:41:01,511 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-3 - Starting...
+2021-11-27 18:41:01,678 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-3 - Start completed.
+2021-11-27 18:41:01,678 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 18:41:01,848 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 18:41:01,848 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:41:02,231 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 18:41:02,405 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-27 18:41:02,422 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:41:02,424 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-27 18:41:02,432 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.436 seconds (JVM running for 441.697)
+2021-11-27 18:41:02,434 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-27 18:41:02,435 INFO br.com.magna.api.ApiApplication {restartedMain} API iniciada
+2021-11-27 18:42:15,724 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-11} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:42:15,725 INFO com.zaxxer.hikari.HikariDataSource {Thread-11} HikariPool-3 - Shutdown initiated...
+2021-11-27 18:42:15,731 INFO com.zaxxer.hikari.HikariDataSource {Thread-11} HikariPool-3 - Shutdown completed.
+2021-11-27 18:42:15,822 INFO br.com.magna.api.ApiApplication {restartedMain} Iniciando API
+2021-11-27 18:42:15,877 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 13104 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-27 18:42:15,878 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-27 18:42:15,878 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-27 18:42:16,114 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 18:42:16,129 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+2021-11-27 18:42:16,273 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-27 18:42:16,274 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:42:16,274 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-27 18:42:16,275 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-27 18:42:16,310 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-27 18:42:16,311 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 430 ms
+2021-11-27 18:42:16,366 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 18:42:16,374 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-4 - Starting...
+2021-11-27 18:42:16,518 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-4 - Start completed.
+2021-11-27 18:42:16,518 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 18:42:16,742 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 18:42:16,742 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:42:17,027 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 18:42:17,211 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-27 18:42:17,226 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:42:17,229 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-27 18:42:17,236 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.407 seconds (JVM running for 516.501)
+2021-11-27 18:42:17,238 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-27 18:42:17,238 INFO br.com.magna.api.ApiApplication {restartedMain} API iniciada
+2021-11-27 18:44:40,481 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-15} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:44:40,482 INFO com.zaxxer.hikari.HikariDataSource {Thread-15} HikariPool-4 - Shutdown initiated...
+2021-11-27 18:44:40,491 INFO com.zaxxer.hikari.HikariDataSource {Thread-15} HikariPool-4 - Shutdown completed.
+2021-11-27 18:44:40,593 INFO br.com.magna.api.ApiApplication {restartedMain} Iniciando API
+2021-11-27 18:44:40,644 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 13104 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-27 18:44:40,645 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-27 18:44:40,645 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-27 18:44:40,889 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 18:44:40,906 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 16 ms. Found 3 JPA repository interfaces.
+2021-11-27 18:44:41,045 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-27 18:44:41,046 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:44:41,046 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-27 18:44:41,046 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-27 18:44:41,078 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-27 18:44:41,078 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 430 ms
+2021-11-27 18:44:41,139 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 18:44:41,146 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-5 - Starting...
+2021-11-27 18:44:41,251 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-5 - Start completed.
+2021-11-27 18:44:41,252 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 18:44:41,415 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 18:44:41,415 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:44:41,807 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 18:44:43,182 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-27 18:44:43,197 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:44:43,200 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-27 18:44:43,206 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 2.607 seconds (JVM running for 662.471)
+2021-11-27 18:44:43,210 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-27 18:44:43,210 INFO br.com.magna.api.ApiApplication {restartedMain} API iniciada
+2021-11-27 18:45:53,484 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-19} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:45:53,488 INFO com.zaxxer.hikari.HikariDataSource {Thread-19} HikariPool-5 - Shutdown initiated...
+2021-11-27 18:45:53,498 INFO com.zaxxer.hikari.HikariDataSource {Thread-19} HikariPool-5 - Shutdown completed.
+2021-11-27 18:45:53,613 INFO br.com.magna.api.ApiApplication {restartedMain} Iniciando API
+2021-11-27 18:45:53,682 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 13104 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-27 18:45:53,683 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-27 18:45:53,683 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-27 18:45:53,873 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-27 18:45:53,886 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 12 ms. Found 3 JPA repository interfaces.
+2021-11-27 18:45:54,072 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-27 18:45:54,073 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:45:54,073 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-27 18:45:54,074 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-27 18:45:54,103 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-27 18:45:54,103 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 417 ms
+2021-11-27 18:45:54,149 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-27 18:45:54,154 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-6 - Starting...
+2021-11-27 18:45:54,400 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-6 - Start completed.
+2021-11-27 18:45:54,401 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-27 18:45:54,577 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-27 18:45:54,577 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-27 18:45:54,989 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-27 18:45:55,171 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-27 18:45:55,188 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-27 18:45:55,190 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-27 18:45:55,194 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.564 seconds (JVM running for 734.459)
+2021-11-27 18:45:55,196 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-27 18:45:55,197 INFO br.com.magna.api.ApiApplication {restartedMain} API iniciada
+2021-11-27 18:46:07,821 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-2} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-27 18:46:07,821 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-2} Initializing Servlet 'dispatcherServlet'
+2021-11-27 18:46:07,822 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-2} Completed initialization in 1 ms
+2021-11-27 18:46:07,835 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-2} Convidado com codigo: 123 encontrado
