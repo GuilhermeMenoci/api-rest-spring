@@ -23,16 +23,15 @@ public class EventoService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-//	// Listando todos os eventos
-//	public List<EventoEntity> listEntity() {
-//		List<EventoEntity> evento = eventoRepository.findAll();
-//		return evento;
-//	}
-
-	// Listando todos os eventos com Page
-	public Page<EventoDto> listEntity(Pageable pageable) {
-		Page<EventoEntity> evento = eventoRepository.findAll(pageable);
-		return evento.map(item -> modelMapper.map(item, EventoDto.class));
+	// Listando todos os eventos com Page(pagina e quantidade)
+	public Page<EventoDto> listPage(Long codigo, Pageable paginacao) {
+		if (codigo == null) {
+			Page<EventoEntity> eventos = eventoRepository.findAll(paginacao);
+			return pageDto(eventos);
+		} else {
+			Page<EventoEntity> eventos = eventoRepository.findByCodigo(codigo, paginacao);
+			return pageDto(eventos);
+		}
 	}
 
 	// Listando evento por codigo
@@ -92,6 +91,13 @@ public class EventoService {
 	public List<EventoDto> listDto(List<EventoEntity> evento) {
 		List<EventoDto> eventos = evento.stream().map(EventoDto::new).collect(Collectors.toList());
 		return eventos;
+	}
+
+	// Convertando a lista de Entity para Dto
+	public Page<EventoDto> pageDto(Page<EventoEntity> evento) {
+		// Page<EventoDto> eventos =
+		// evento.stream().map(EventoDto::new).collect(Collectors.toList());
+		return evento.map(EventoDto::new);
 	}
 
 }

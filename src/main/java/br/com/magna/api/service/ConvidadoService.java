@@ -24,16 +24,15 @@ public class ConvidadoService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-//	// Listando todos os usuarios Entity
-//	public List<ConvidadoEntity> listEntity() {
-//		List<ConvidadoEntity> convidado = convidadoRepository.findAll();
-//		return convidado;
-//	}
-
-	// Listando todos os convidados com Page
-	public Page<ConvidadoDto> listEntity(Pageable pageable) {
-		Page<ConvidadoEntity> convidado = convidadoRepository.findAll(pageable);
-		return convidado.map(item -> modelMapper.map(item, ConvidadoDto.class));
+	// Listando todos os eventos com Page(pagina e quantidade)
+	public Page<ConvidadoDto> listPage(String cpf, Pageable paginacao) {
+		if (cpf == null) {
+			Page<ConvidadoEntity> convidados = convidadoRepository.findAll(paginacao);
+			return pageDto(convidados);
+		} else {
+			Page<ConvidadoEntity> convidados = convidadoRepository.findByCpf(cpf, paginacao);
+			return pageDto(convidados);
+		}
 	}
 
 	// Listando usuario por CPF
@@ -52,14 +51,6 @@ public class ConvidadoService {
 		Boolean verificaConvidado = convidadoRepository.existsByCpf(cpfConvidado.getCpf());
 		return verificaConvidado;
 	}
-
-//	// Criando convidado
-//	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
-//		verificaConvidado(convidadoDto);
-//		ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
-//		ConvidadoDto convidadoDtoSave = convertDto(convidado);
-//		return convidadoDtoSave;
-//	}
 
 	// Criando convidado
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
@@ -105,6 +96,11 @@ public class ConvidadoService {
 	public List<ConvidadoDto> listDto(List<ConvidadoEntity> convidado) {
 		List<ConvidadoDto> convidados = convidado.stream().map(ConvidadoDto::new).collect(Collectors.toList());
 		return convidados;
+	}
+
+	// Convertando a Page de Entity para Dto
+	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidado) {
+		return convidado.map(ConvidadoDto::new);
 	}
 
 }

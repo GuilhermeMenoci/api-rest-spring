@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.api.dto.ConvidadoDto;
@@ -28,17 +29,17 @@ public class ConvidadoController {
 	@Autowired
 	private ConvidadoService convidadoService;
 
-//	// Listando todos os convidados
-//	@GetMapping
-//	public List<ConvidadoDto> list() {
-//		List<ConvidadoEntity> listConvidado= convidadoService.listEntity();
-//		return convidadoService.listDto(listConvidado);
-//	}
-
-	// Listando todos os convidados com Page
+	// Listando convidados com Page e ordem crescente
 	@GetMapping
-	public ResponseEntity<Page<ConvidadoDto>> list(Pageable pageable) {
-		return ResponseEntity.ok(convidadoService.listEntity(pageable));
+	public Page<ConvidadoDto> listCpf(@RequestParam(required = false) String cpf, Pageable pagina)
+			throws NotFoundException {
+		try {
+			return convidadoService.listPage(cpf, pagina);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("Convidado não encontrado");
+			return null;
+		}
 	}
 
 	// Listando convidados por CPF

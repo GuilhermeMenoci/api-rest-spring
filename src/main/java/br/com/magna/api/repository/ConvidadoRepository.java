@@ -1,5 +1,7 @@
 package br.com.magna.api.repository;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
@@ -15,4 +17,6 @@ public interface ConvidadoRepository extends JpaRepository<ConvidadoEntity, Long
 	Boolean existsByCpf(String cpf);
 	
 	String deleteByCpf(String cpf);
+	
+	Page<ConvidadoEntity> findByCpf(String cpf, Pageable paginacao);
 }

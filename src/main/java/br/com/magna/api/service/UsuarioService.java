@@ -24,16 +24,15 @@ public class UsuarioService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-//	// Listando todos os usuarios Entity
-//	public List<UsuarioEntity> listEntity() {
-//		List<UsuarioEntity> user = usuarioRepository.findAll();
-//		return user;
-//	}
-	
-	//Listando todos os usuarios com Page
-	public Page<UsuarioDto> listEntity(Pageable pageable) {
-		Page<UsuarioEntity> usuario = usuarioRepository.findAll(pageable);
-		return usuario.map(item -> modelMapper.map(item, UsuarioDto.class));
+	// Listando todos os eventos com Page(pagina e quantidade)
+	public Page<UsuarioDto> listPage(String login, Pageable paginacao) {
+		if (login == null) {
+			Page<UsuarioEntity> usuarios = usuarioRepository.findAll(paginacao);
+			return pageDto(usuarios);
+		} else {
+			Page<UsuarioEntity> usuarios = usuarioRepository.findByLogin(login , paginacao);
+			return pageDto(usuarios);
+		}
 	}
 
 	// Listando usuario por login
@@ -46,7 +45,7 @@ public class UsuarioService {
 		}
 		return usuarioDto;
 	}
-	
+
 	// Verificando se o usuario já tem um cadastro
 	public Boolean verificaUsuario(UsuarioDto loginUsuario) throws NotFoundException {
 		Boolean verificaUser = usuarioRepository.existsByLogin(loginUsuario.getLogin());
@@ -56,12 +55,12 @@ public class UsuarioService {
 	// Criando usuario
 	public UsuarioDto createUsuarioDto(UsuarioDto usuarioDto) throws NotFoundException {
 		try {
-			if(verificaUsuario(usuarioDto)) 
+			if (verificaUsuario(usuarioDto))
 				System.out.println("Usuario já cadastrado");
-			 else {
-			UsuarioEntity usuario = usuarioRepository.save(convertEntity(usuarioDto));
-			UsuarioDto usuarioDtoSave = convertDto(usuario);
-			return usuarioDtoSave;
+			else {
+				UsuarioEntity usuario = usuarioRepository.save(convertEntity(usuarioDto));
+				UsuarioDto usuarioDtoSave = convertDto(usuario);
+				return usuarioDtoSave;
 			}
 		} catch (Exception ex) {
 			ex.getStackTrace();
@@ -104,6 +103,13 @@ public class UsuarioService {
 	public List<UsuarioDto> listDto(List<UsuarioEntity> usuario) {
 		List<UsuarioDto> user = usuario.stream().map(UsuarioDto::new).collect(Collectors.toList());
 		return user;
+	}
+	
+	// Convertando a Page de Entity para Dto
+	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuario) {
+		// Page<EventoDto> eventos =
+		// evento.stream().map(EventoDto::new).collect(Collectors.toList());
+		return usuario.map(UsuarioDto::new);
 	}
 
 }

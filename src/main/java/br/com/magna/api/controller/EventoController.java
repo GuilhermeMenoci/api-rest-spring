@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.api.dto.EventoDto;
@@ -25,22 +26,8 @@ import br.com.magna.api.service.EventoService;
 @RequestMapping("/eventos")
 public class EventoController {
 
-	// Injeção de dependencia
 	@Autowired
 	private EventoService eventoService;
-
-//	//Listando todos os eventos
-//	@GetMapping
-//	public List<EventoDto> list(){
-//		List<EventoEntity> listEventos = eventoService.listEntity();
-//		return eventoService.listDto(listEventos);
-//	}
-
-	// Listando todos os usuarios com Page
-	@GetMapping
-	public ResponseEntity<Page<EventoDto>> list(Pageable pageable) {
-		return ResponseEntity.ok(eventoService.listEntity(pageable));
-	}
 
 	// Listando usuario por CODIGO
 	@GetMapping("/{codigo}")
@@ -51,6 +38,19 @@ public class EventoController {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			return ResponseEntity.notFound().build();
+		}
+	}
+	
+	// Listando evento com Page e ordem crescente
+	@GetMapping
+	public Page<EventoDto> listCodigo(@RequestParam(required = false) Long codigo, Pageable pagina)
+			throws NotFoundException {
+		try {
+			return eventoService.listPage(codigo, pagina);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("Usuario não encontrado");
+			return null;
 		}
 	}
 

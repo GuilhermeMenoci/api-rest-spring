@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.api.dto.UsuarioDto;
@@ -28,19 +29,6 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioService usuarioService;
 
-//	// Listando todos os usuarios com LIST
-//	@GetMapping
-//	public List<UsuarioDto> list() {
-//		List<UsuarioEntity> listUsuario = usuarioService.listEntity();
-//		return usuarioService.listDto(listUsuario);
-//	}
-
-	// Listando todos os usuarios com Page
-	@GetMapping
-	public ResponseEntity<Page<UsuarioDto>> list(Pageable pageable) {
-		return ResponseEntity.ok(usuarioService.listEntity(pageable));
-	}
-
 	// Listando usuario por LOGIN
 	@GetMapping("/{login}")
 	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) throws NotFoundException {
@@ -50,6 +38,19 @@ public class UsuarioController {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			return ResponseEntity.notFound().build();
+		}
+	}
+
+	// Listando usuario com Page e ordem crescente
+	@GetMapping
+	public Page<UsuarioDto> listLogin(@RequestParam(required = false) String login, Pageable pagina)
+			throws NotFoundException {
+		try {
+			return usuarioService.listPage(login, pagina);
+		} catch (Exception ex) {
+			ex.printStackTrace();
+			System.out.println("Usuario não encontrado");
+			return null;
 		}
 	}
 
@@ -80,7 +81,7 @@ public class UsuarioController {
 			return ResponseEntity.notFound().build();
 		}
 	}
-	
+
 	// Deletando usuario
 	@DeleteMapping("/{login}")
 	@Transactional
