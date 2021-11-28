@@ -3,8 +3,6 @@ package br.com.magna.api.controller;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.data.domain.Page;
@@ -21,7 +19,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.magna.api.ApiApplication;
 import br.com.magna.api.dto.ConvidadoDto;
 import br.com.magna.api.service.ConvidadoService;
 import io.swagger.annotations.ApiOperation;
@@ -30,7 +27,7 @@ import io.swagger.annotations.ApiOperation;
 @RequestMapping("/convidados")
 public class ConvidadoController {
 	
-	private static Logger logger = LoggerFactory.getLogger(ApiApplication.class);
+	//private static Logger logger = LoggerFactory.getLogger(ApiApplication.class);
 
 	@Autowired
 	private ConvidadoService convidadoService;
@@ -41,12 +38,12 @@ public class ConvidadoController {
 	public Page<ConvidadoDto> listCpf(@RequestParam(required = false) String cpf, Pageable pagina)
 			throws NotFoundException {
 		try {
-			logger.info("Convidados: " + pagina);
+			//logger.info("Convidados: " + pagina);
 			return convidadoService.listPage(cpf, pagina);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Convidado não encontrado");
-			logger.info("Convidado não encontrados");
+			//logger.info("Convidado não encontrados");
 			return null;
 		}
 	}
@@ -57,12 +54,12 @@ public class ConvidadoController {
 	@GetMapping("/{cpf}")
 	public ResponseEntity<ConvidadoDto> listCpf(@PathVariable String cpf) throws NotFoundException {
 		try {
-			logger.info("Convidado com codigo: " + cpf + " encontrado");
+			//logger.info("Convidado com codigo: " + cpf + " encontrado");
 			return ResponseEntity.ok(convidadoService.getCpf(cpf));
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
-			logger.info("Convidado com codigo: " + cpf + " não encontrado");
+			//logger.info("Convidado com codigo: " + cpf + " não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}
@@ -74,12 +71,12 @@ public class ConvidadoController {
 	public ResponseEntity<ConvidadoDto> post(@RequestBody @Valid ConvidadoDto convidadoDto) throws Exception {
 		try {
 			ConvidadoDto convidadoDtoCreate = convidadoService.createConvidadoDto(convidadoDto);
-			logger.info("Convidado cadastrado");
+			//logger.info("Convidado cadastrado");
 			return ResponseEntity.status(HttpStatus.CREATED).body(convidadoDtoCreate);
 		} catch (Exception ex) {
 			ex.printStackTrace();
 			System.out.println("Convidado não cadastrado");
-			logger.info("Evento não cadastrado");
+			//logger.info("Evento não cadastrado");
 			return ResponseEntity.noContent().build();
 		}
 	}
@@ -92,12 +89,12 @@ public class ConvidadoController {
 			throws NotFoundException {
 		try {
 			ConvidadoDto convidadoDtoUpdate = convidadoService.update(cpf, convidadoDto);
-			logger.info("Convidado com CPF: " + cpf + " atualizado");
+			//logger.info("Convidado com CPF: " + cpf + " atualizado");
 			return ResponseEntity.ok(convidadoDtoUpdate);
 		} catch (Exception ex) {
 			ex.getMessage();
 			System.out.println("Convidado não encontrado");
-			logger.info("Convidado com CPF: " + cpf + " não encontrado");
+			//logger.info("Convidado com CPF: " + cpf + " não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}
@@ -109,12 +106,12 @@ public class ConvidadoController {
 	public ResponseEntity<ConvidadoDto> delete(@PathVariable String cpf) {
 		try {
 			convidadoService.delete(cpf);
-			logger.info("Convidado com CPF: " + cpf + " deletado");
+			//logger.info("Convidado com CPF: " + cpf + " deletado");
 			return ResponseEntity.ok().build();
 		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Convidado não encontrado");
-			logger.info("Convidado com CPF: " + cpf + " não encontrado");
+			//logger.info("Convidado com CPF: " + cpf + " não encontrado");
 			return ResponseEntity.notFound().build();
 		}
 	}

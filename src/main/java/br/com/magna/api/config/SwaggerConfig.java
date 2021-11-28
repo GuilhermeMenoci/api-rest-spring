@@ -10,20 +10,22 @@ import springfox.documentation.spring.web.plugins.Docket;
 
 @Configuration
 public class SwaggerConfig {
-
-//	private static final String BASE_PACKAGE = "br.com.magna.magna";
+	
+//	private static final String BASE_PACKAGE = "br.com.magna.api";
 //	private static final String API_TITLE = "API Rest ";
 //	private static final String API_DESCRIPTION = "REST API Magna";
 //	private static final String CONTACT_NAME = "Guilherme Menoci";
 //	private static final String CONTACT_GITHUB = "https://github.com/GuilhermeMenoci";
-//	private static final String CONTACT_EMAIL = "gmenoci@magnasistemas.com";
+//	private static final String CONTACT_EMAIL = "gmenoci@magnasistemas.com.br";
 
 	
 	@Bean
 	public Docket forumApi() {
 		return new Docket(DocumentationType.SWAGGER_2).select()
-				.apis(RequestHandlerSelectors.basePackage("br.com.magna")).paths(PathSelectors.ant("/**")).build();
+				.apis(RequestHandlerSelectors.basePackage("br.com.magna.api"))
+				.paths(PathSelectors.ant("/**")).build();
 	}
+
 	
 //	  private ApiInfo buildApiInfo() {
 //	        return new ApiInfoBuilder()

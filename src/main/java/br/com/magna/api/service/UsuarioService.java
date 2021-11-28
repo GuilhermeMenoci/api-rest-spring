@@ -1,8 +1,5 @@
 package br.com.magna.api.service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -88,6 +85,15 @@ public class UsuarioService {
 	}
 
 	// CONVERSORES//
+	
+	//Construtor do UsuarioDto
+	public UsuarioDto usuarioDto(UsuarioEntity usuario) {
+		UsuarioDto dto = new UsuarioDto();
+		dto.setLogin(usuario.getLogin());
+		dto.setSenha(usuario.getSenha());
+		dto.setEvento(usuario.getEvento());
+		return dto;
+	}
 
 	// Conversor ModelMapper de Entity para Dto
 	public UsuarioDto convertDto(UsuarioEntity usuario) {
@@ -98,18 +104,23 @@ public class UsuarioService {
 	public UsuarioEntity convertEntity(UsuarioDto usuario) {
 		return modelMapper.map(usuario, UsuarioEntity.class);
 	}
-
-	// Convertando a lista de Entity para Dto
-	public List<UsuarioDto> listDto(List<UsuarioEntity> usuario) {
-		List<UsuarioDto> user = usuario.stream().map(UsuarioDto::new).collect(Collectors.toList());
-		return user;
-	}
 	
-	// Convertando a Page de Entity para Dto
-	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuario) {
-		// Page<EventoDto> eventos =
-		// evento.stream().map(EventoDto::new).collect(Collectors.toList());
-		return usuario.map(UsuarioDto::new);
+	// Conversor Page de Entity para Dto
+	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuarioEntity) {
+		return usuarioEntity.map(convert -> this.usuarioDto(convert));
 	}
+
+//	// Convertando a lista de Entity para Dto
+//	public List<UsuarioDto> listDto(List<UsuarioEntity> usuario) {
+//		List<UsuarioDto> user = usuario.stream().map(UsuarioDto::new).collect(Collectors.toList());
+//		return user;
+//	}
+//	
+//	// Convertando a Page de Entity para Dto
+//	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuario) {
+//		// Page<EventoDto> eventos =
+//		// evento.stream().map(EventoDto::new).collect(Collectors.toList());
+//		return usuario.map(UsuarioDto::new);
+//	}
 
 }

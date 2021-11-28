@@ -1,8 +1,5 @@
 package br.com.magna.api.service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -39,10 +36,6 @@ public class ConvidadoService {
 	public ConvidadoDto getCpf(String cpf) throws NotFoundException {
 		ConvidadoEntity convidado = convidadoRepository.findByCpf(cpf);
 		ConvidadoDto convidadoDto = convertDto(convidado);
-
-//		if (convidadoDto == null) {
-//			throw new NotFoundException();
-//		}
 		return convidadoDto;
 	}
 
@@ -81,6 +74,15 @@ public class ConvidadoService {
 	}
 
 	// CONVERSORES//
+	
+	//Construtor do ConvidadoDto
+	public ConvidadoDto convidadoDto(ConvidadoEntity convidado) {
+		ConvidadoDto dto = new ConvidadoDto();
+		dto.setCpf(convidado.getCpf());
+		dto.setNome(convidado.getNome());
+		dto.setEvento(convidado.getEvento());
+		return dto;
+	}
 
 	// Conversor ModelMapper de Entity para Dto
 	public ConvidadoDto convertDto(ConvidadoEntity convidado) {
@@ -91,16 +93,21 @@ public class ConvidadoService {
 	public ConvidadoEntity convertEntity(ConvidadoDto convidado) {
 		return modelMapper.map(convidado, ConvidadoEntity.class);
 	}
-
-	// Convertando a lista de Entity para Dto
-	public List<ConvidadoDto> listDto(List<ConvidadoEntity> convidado) {
-		List<ConvidadoDto> convidados = convidado.stream().map(ConvidadoDto::new).collect(Collectors.toList());
-		return convidados;
+	
+	// Conversor Page de Entity para Dto
+	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidadoEntity) {
+		return convidadoEntity.map(convert -> this.convidadoDto(convert));
 	}
 
-	// Convertando a Page de Entity para Dto
-	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidado) {
-		return convidado.map(ConvidadoDto::new);
-	}
+//	// Convertando a lista de Entity para Dto
+//	public List<ConvidadoDto> listDto(List<ConvidadoEntity> convidado) {
+//		List<ConvidadoDto> convidados = convidado.stream().map(ConvidadoDto::new).collect(Collectors.toList());
+//		return convidados;
+//	}
+//
+//	// Convertando a Page de Entity para Dto
+//	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidado) {
+//		return convidado.map(ConvidadoDto::new);
+//	}
 
 }

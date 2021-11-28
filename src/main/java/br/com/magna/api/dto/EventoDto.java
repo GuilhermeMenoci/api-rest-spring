@@ -7,8 +7,6 @@ import java.util.Objects;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import br.com.magna.api.entity.EventoEntity;
-
 //Dto - Dados que vou enviar/mostrar para o client
 public class EventoDto implements Serializable{
 	
@@ -25,19 +23,6 @@ public class EventoDto implements Serializable{
 	public EventoDto() {
 	}
 	
-//	public EventoDto(@NotNull @NotEmpty Long codigo, @NotNull @NotEmpty String nomeEvento, @NotNull @NotEmpty String cidade) {
-//		this.codigo = codigo;
-//		this.nomeEvento = nomeEvento;
-//		this.cidade = cidade;
-//	}
-	
-	public EventoDto(EventoEntity evento) {
-		this.codigo = evento.getCodigo();
-		this.nomeEvento = evento.getNomeEvento();
-		this.data = evento.getData();
-		this.cidade = evento.getCidade();
-	}
-
 	public Long getCodigo() {
 		return codigo;
 	}

@@ -7,7 +7,6 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 import br.com.magna.api.entity.EventoEntity;
-import br.com.magna.api.entity.UsuarioEntity;
 
 public class UsuarioDto implements Serializable{
 	
@@ -20,18 +19,6 @@ public class UsuarioDto implements Serializable{
 	private EventoEntity evento;
 
 	public UsuarioDto() {
-	}
-	
-//	public UsuarioDto(@NotNull @NotEmpty String login, @NotNull String senha, EventoEntity evento) {
-//		this.login = login;
-//		this.senha = senha;
-//		this.evento = evento;
-//	}
-//
-	public UsuarioDto(UsuarioEntity usuario) {
-		this.login = usuario.getLogin();
-		this.senha = usuario.getSenha();
-		this.evento = usuario.getEvento();
 	}
 
 	public String getLogin() {

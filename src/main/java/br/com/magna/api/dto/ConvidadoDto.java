@@ -6,7 +6,6 @@ import java.util.Objects;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-import br.com.magna.api.entity.ConvidadoEntity;
 import br.com.magna.api.entity.EventoEntity;
 
 public class ConvidadoDto implements Serializable{
@@ -20,18 +19,6 @@ public class ConvidadoDto implements Serializable{
 	private EventoEntity evento;
 	
 	public ConvidadoDto() {
-	}
-	
-//	public ConvidadoDto(@NotNull @NotEmpty String cpf, @NotNull @NotEmpty String nome, EventoEntity evento) {
-//		this.cpf = cpf;
-//		this.nome = nome;
-//		this.evento = evento;
-//	}
-	
-	public ConvidadoDto(ConvidadoEntity convidado) {
-		this.cpf = convidado.getCpf();
-		this.nome = convidado.getNome();
-		this.evento = convidado.getEvento();
 	}
 
 	public String getCpf() {

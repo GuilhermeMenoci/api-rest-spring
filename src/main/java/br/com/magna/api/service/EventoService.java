@@ -1,8 +1,5 @@
 package br.com.magna.api.service;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +19,12 @@ public class EventoService {
 
 	@Autowired
 	private ModelMapper modelMapper;
+
+//	// Listando todos os eventos com Page
+//	public Page<EventoDto> list(Pageable pageable) {
+//		Page<EventoEntity> evento = eventoRepository.findAll(pageable);
+//		return evento.map(item -> modelMapper.map(item, EventoDto.class));
+//	}
 
 	// Listando todos os eventos com Page(pagina e quantidade)
 	public Page<EventoDto> listPage(Long codigo, Pageable paginacao) {
@@ -74,8 +77,19 @@ public class EventoService {
 	public void delete(Long codigo) throws NotFoundException {
 		eventoRepository.deleteByCodigo(codigo);
 	}
+	
+	// ------------------------------- //
 
 	// CONVERSORES//
+
+	//Construtor do EventoDto
+	public EventoDto eventoDto(EventoEntity evento) {
+		EventoDto dto = new EventoDto();
+		dto.setCodigo(evento.getCodigo());
+		dto.setNomeEvento(evento.getNomeEvento());
+		dto.setCidade(evento.getCidade());
+		return dto;
+	}
 
 	// Conversor ModelMapper de Entity para Dto
 	public EventoDto convertDto(EventoEntity evento) {
@@ -86,18 +100,23 @@ public class EventoService {
 	public EventoEntity convertEntity(EventoDto evento) {
 		return modelMapper.map(evento, EventoEntity.class);
 	}
-
-	// Convertando a lista de Entity para Dto
-	public List<EventoDto> listDto(List<EventoEntity> evento) {
-		List<EventoDto> eventos = evento.stream().map(EventoDto::new).collect(Collectors.toList());
-		return eventos;
+	
+	// Conversor Page de Entity para Dto
+	public Page<EventoDto> pageDto(Page<EventoEntity> eventoEntity) {
+		return eventoEntity.map(convert -> this.eventoDto(convert));
 	}
+	
+//	// Convertando a lista de Entity para Dto
+//	public List<EventoDto> listDto(List<EventoEntity> evento) {
+//		List<EventoDto> eventos = evento.stream().map(EventoDto::new).collect(Collectors.toList());
+//		return eventos;
+//	}
 
-	// Convertando a lista de Entity para Dto
-	public Page<EventoDto> pageDto(Page<EventoEntity> evento) {
-		// Page<EventoDto> eventos =
-		// evento.stream().map(EventoDto::new).collect(Collectors.toList());
-		return evento.map(EventoDto::new);
-	}
+//	// Convertando a lista de Entity para Dto
+//	public Page<EventoDto> pageDto(Page<EventoEntity> evento) {
+//		// Page<EventoDto> eventos =
+//		// evento.stream().map(EventoDto::new).collect(Collectors.toList());
+//		return evento.map(EventoDto::new);
+//	}
 
 }
