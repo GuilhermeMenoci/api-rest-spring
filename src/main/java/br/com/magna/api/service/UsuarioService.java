@@ -79,8 +79,6 @@ public class UsuarioService {
 	}
 
 	
-	
-	
 	// CONVERSORES//
 
 	// Construtor do UsuarioDto

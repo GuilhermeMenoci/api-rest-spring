@@ -5124,3 +5124,398 @@ Unconditional classes:
 2021-11-29 14:20:26,218 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {RMI TCP Connection(15)-127.0.0.1} Closing JPA EntityManagerFactory for persistence unit 'default'
 2021-11-29 14:20:26,223 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(15)-127.0.0.1} HikariPool-1 - Shutdown initiated...
 2021-11-29 14:20:26,230 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(15)-127.0.0.1} HikariPool-1 - Shutdown completed.
+2021-11-29 14:22:25,821 INFO br.com.magna.api.ApiApplication {main} API INICIADA
+2021-11-29 14:22:26,122 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:22:26,627 INFO org.hibernate.validator.internal.util.Version {background-preinit} HV000001: Hibernate Validator 6.2.0.Final
+2021-11-29 14:22:26,634 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9028 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:22:26,635 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:22:26,635 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:22:26,704 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-29 14:22:26,704 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-29 14:22:28,006 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:22:28,105 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 81 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:22:29,056 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:22:29,072 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:22:29,072 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:22:29,073 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:22:29,238 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:22:29,238 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 2533 ms
+2021-11-29 14:22:29,468 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:22:29,555 INFO org.hibernate.Version {restartedMain} HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-11-29 14:22:29,802 INFO org.hibernate.annotations.common.Version {restartedMain} HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-29 14:22:29,937 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Starting...
+2021-11-29 14:22:30,260 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Start completed.
+2021-11-29 14:22:30,293 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:22:31,347 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:22:31,357 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:22:32,565 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:22:32,682 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:22:32,864 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:22:33,032 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:22:33,070 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:22:33,071 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:22:33,091 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:22:33,136 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:22:33,310 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:22:33,358 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:22:33,385 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:22:33,395 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:22:33,402 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:22:33,416 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:22:33,435 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:22:33,442 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:22:33,448 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:22:33,469 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 7.335 seconds (JVM running for 8.891)
+2021-11-29 14:22:37,928 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 14:22:37,928 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Initializing Servlet 'dispatcherServlet'
+2021-11-29 14:22:37,930 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 2 ms
+2021-11-29 14:22:38,775 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-9} No mapping for GET /
+2021-11-29 14:22:38,811 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-10} No mapping for GET /csrf
+2021-11-29 14:22:46,089 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-2} Usuarios: Page request [number: 0, size 5, sort: login: ASC]
+2021-11-29 14:24:01,805 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-4} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:01,809 INFO com.zaxxer.hikari.HikariDataSource {Thread-4} HikariPool-1 - Shutdown initiated...
+2021-11-29 14:24:01,817 INFO com.zaxxer.hikari.HikariDataSource {Thread-4} HikariPool-1 - Shutdown completed.
+2021-11-29 14:24:01,970 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:24:02,036 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9028 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:24:02,036 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:24:02,036 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:24:02,524 WARN org.springframework.boot.web.servlet.context.AnnotationConfigServletWebServerApplicationContext {restartedMain} Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [br.com.magna.api.ApiApplication]; nested exception is java.io.FileNotFoundException: class path resource [br/com/magna/api/controller/ConvidadoController.class] cannot be opened because it does not exist
+2021-11-29 14:24:02,533 INFO org.springframework.boot.autoconfigure.logging.ConditionEvaluationReportLoggingListener {restartedMain} 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2021-11-29 14:24:02,598 ERROR org.springframework.boot.SpringApplication {restartedMain} Application run failed
+org.springframework.beans.factory.BeanDefinitionStoreException: Failed to parse configuration class [br.com.magna.api.ApiApplication]; nested exception is java.io.FileNotFoundException: class path resource [br/com/magna/api/controller/ConvidadoController.class] cannot be opened because it does not exist
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:189)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.processConfigBeanDefinitions(ConfigurationClassPostProcessor.java:331)
+	at org.springframework.context.annotation.ConfigurationClassPostProcessor.postProcessBeanDefinitionRegistry(ConfigurationClassPostProcessor.java:247)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanDefinitionRegistryPostProcessors(PostProcessorRegistrationDelegate.java:311)
+	at org.springframework.context.support.PostProcessorRegistrationDelegate.invokeBeanFactoryPostProcessors(PostProcessorRegistrationDelegate.java:112)
+	at org.springframework.context.support.AbstractApplicationContext.invokeBeanFactoryPostProcessors(AbstractApplicationContext.java:746)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:564)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:145)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:730)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:412)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1301)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1290)
+	at br.com.magna.api.ApiApplication.main(ApiApplication.java:17)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.io.FileNotFoundException: class path resource [br/com/magna/api/controller/ConvidadoController.class] cannot be opened because it does not exist
+	at org.springframework.core.io.ClassPathResource.getInputStream(ClassPathResource.java:199)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.getClassReader(SimpleMetadataReader.java:55)
+	at org.springframework.core.type.classreading.SimpleMetadataReader.<init>(SimpleMetadataReader.java:49)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:103)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.createMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:86)
+	at org.springframework.boot.type.classreading.ConcurrentReferenceCachingMetadataReaderFactory.getMetadataReader(ConcurrentReferenceCachingMetadataReaderFactory.java:73)
+	at org.springframework.core.type.classreading.SimpleMetadataReaderFactory.getMetadataReader(SimpleMetadataReaderFactory.java:81)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:198)
+	at org.springframework.context.annotation.ConfigurationClassParser.doProcessConfigurationClass(ConfigurationClassParser.java:304)
+	at org.springframework.context.annotation.ConfigurationClassParser.processConfigurationClass(ConfigurationClassParser.java:250)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:207)
+	at org.springframework.context.annotation.ConfigurationClassParser.parse(ConfigurationClassParser.java:175)
+	... 18 common frames omitted
+2021-11-29 14:24:04,116 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:24:04,188 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9028 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:24:04,188 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:24:04,188 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:24:04,809 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:24:04,829 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 20 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:24:05,043 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:24:05,044 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:05,044 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:24:05,044 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:24:05,069 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:24:05,069 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 874 ms
+2021-11-29 14:24:05,122 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:24:05,128 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-2 - Starting...
+2021-11-29 14:24:05,395 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-2 - Start completed.
+2021-11-29 14:24:05,396 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:24:05,662 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:24:05,662 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:06,109 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:24:06,151 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:24:06,203 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:24:06,268 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:06,270 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:24:06,270 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:24:06,271 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:24:06,288 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:24:06,338 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:24:06,366 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:24:06,388 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:24:06,395 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:24:06,402 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:24:06,419 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:24:06,461 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:24:06,486 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:24:06,498 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:24:06,511 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 2.387 seconds (JVM running for 101.932)
+2021-11-29 14:24:06,517 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-29 14:24:14,189 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-7} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:14,191 INFO com.zaxxer.hikari.HikariDataSource {Thread-7} HikariPool-2 - Shutdown initiated...
+2021-11-29 14:24:14,201 INFO com.zaxxer.hikari.HikariDataSource {Thread-7} HikariPool-2 - Shutdown completed.
+2021-11-29 14:24:14,373 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:24:14,474 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9028 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:24:14,474 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:24:14,474 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:24:15,264 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:24:15,289 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 24 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:24:15,488 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:24:15,489 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:15,489 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:24:15,489 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:24:15,524 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:24:15,524 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 1043 ms
+2021-11-29 14:24:15,627 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:24:15,639 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-3 - Starting...
+2021-11-29 14:24:15,779 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-3 - Start completed.
+2021-11-29 14:24:15,779 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:24:15,984 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:24:15,984 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:16,715 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:24:17,121 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:24:17,231 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:24:17,323 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:17,325 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:24:17,326 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:24:17,327 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:24:17,346 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:24:17,400 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:24:17,439 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:24:17,459 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:24:17,467 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:24:17,473 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:24:17,490 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:24:17,509 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:24:17,516 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:24:17,521 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:24:17,533 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 3.151 seconds (JVM running for 112.954)
+2021-11-29 14:24:17,539 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-29 14:24:18,774 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-13} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:18,775 INFO com.zaxxer.hikari.HikariDataSource {Thread-13} HikariPool-3 - Shutdown initiated...
+2021-11-29 14:24:18,785 INFO com.zaxxer.hikari.HikariDataSource {Thread-13} HikariPool-3 - Shutdown completed.
+2021-11-29 14:24:18,893 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:24:18,938 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9028 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:24:18,938 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:24:18,938 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:24:19,283 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:24:19,302 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 18 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:24:19,491 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:24:19,492 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:19,493 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:24:19,493 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:24:19,536 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:24:19,537 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 597 ms
+2021-11-29 14:24:19,605 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:24:19,611 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-4 - Starting...
+2021-11-29 14:24:19,748 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-4 - Start completed.
+2021-11-29 14:24:19,749 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:24:19,942 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:24:19,943 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:20,367 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:24:20,401 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:24:20,450 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:24:20,506 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:20,509 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:24:20,510 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:24:20,511 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:24:20,521 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:24:20,566 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:24:20,591 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:24:20,611 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:24:20,618 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:24:20,627 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:24:20,645 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:24:20,665 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:24:20,671 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:24:20,677 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:24:20,690 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.791 seconds (JVM running for 116.111)
+2021-11-29 14:24:20,694 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-29 14:24:25,135 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-17} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:25,136 INFO com.zaxxer.hikari.HikariDataSource {Thread-17} HikariPool-4 - Shutdown initiated...
+2021-11-29 14:24:25,146 INFO com.zaxxer.hikari.HikariDataSource {Thread-17} HikariPool-4 - Shutdown completed.
+2021-11-29 14:24:25,249 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:24:25,299 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9028 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:24:25,299 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:24:25,299 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:24:25,688 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:24:25,703 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 13 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:24:25,844 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:24:25,845 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:25,845 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:24:25,846 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:24:25,880 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:24:25,880 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 578 ms
+2021-11-29 14:24:25,945 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:24:25,952 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-5 - Starting...
+2021-11-29 14:24:26,248 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-5 - Start completed.
+2021-11-29 14:24:26,249 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:24:26,455 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:24:26,455 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:26,868 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:24:26,905 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:24:26,961 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:24:27,039 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:27,041 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:24:27,042 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:24:27,043 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:24:27,056 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:24:27,128 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:24:27,167 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:24:27,188 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:24:27,196 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:24:27,201 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:24:27,216 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:24:27,231 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:24:27,238 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:24:27,243 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:24:27,255 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.999 seconds (JVM running for 122.676)
+2021-11-29 14:24:27,258 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-29 14:24:44,502 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-21} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:44,503 INFO com.zaxxer.hikari.HikariDataSource {Thread-21} HikariPool-5 - Shutdown initiated...
+2021-11-29 14:24:44,514 INFO com.zaxxer.hikari.HikariDataSource {Thread-21} HikariPool-5 - Shutdown completed.
+2021-11-29 14:24:44,625 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:24:44,664 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9028 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:24:44,664 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:24:44,664 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:24:45,258 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:24:45,271 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 12 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:24:45,399 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:24:45,400 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:45,400 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:24:45,400 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:24:45,431 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:24:45,431 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 764 ms
+2021-11-29 14:24:45,481 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:24:45,486 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-6 - Starting...
+2021-11-29 14:24:45,641 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-6 - Start completed.
+2021-11-29 14:24:45,642 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:24:45,801 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:24:45,801 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:46,164 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:24:46,209 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:24:46,262 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:24:46,325 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:24:46,327 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:24:46,328 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:24:46,329 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:24:46,338 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:24:46,376 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:24:46,397 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:24:46,415 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:24:46,420 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:24:46,426 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:24:46,438 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:24:46,452 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:24:46,456 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:24:46,460 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:24:46,466 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.833 seconds (JVM running for 141.887)
+2021-11-29 14:24:46,469 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-29 14:24:59,021 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-25} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:24:59,022 INFO com.zaxxer.hikari.HikariDataSource {Thread-25} HikariPool-6 - Shutdown initiated...
+2021-11-29 14:24:59,042 INFO com.zaxxer.hikari.HikariDataSource {Thread-25} HikariPool-6 - Shutdown completed.
+2021-11-29 14:24:59,205 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:32:08,699 INFO br.com.magna.api.ApiApplication {main} API INICIADA
+2021-11-29 14:32:08,945 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:32:09,408 INFO org.hibernate.validator.internal.util.Version {background-preinit} HV000001: Hibernate Validator 6.2.0.Final
+2021-11-29 14:32:09,423 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 15508 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:32:09,424 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:32:09,424 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:32:09,498 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-29 14:32:09,498 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-29 14:32:10,824 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:32:10,924 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 85 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:32:11,906 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:32:11,923 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:32:11,924 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:32:11,924 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:32:12,051 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:32:12,051 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 2552 ms
+2021-11-29 14:32:12,232 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:32:12,291 INFO org.hibernate.Version {restartedMain} HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-11-29 14:32:12,537 INFO org.hibernate.annotations.common.Version {restartedMain} HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-29 14:32:12,659 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Starting...
+2021-11-29 14:32:12,966 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Start completed.
+2021-11-29 14:32:12,996 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:32:13,966 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:32:13,978 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:32:15,172 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:32:15,282 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:32:15,416 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:32:15,520 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:32:15,547 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:32:15,548 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:32:15,570 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:32:15,618 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:32:15,786 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:32:15,820 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:32:15,837 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:32:15,843 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:32:15,848 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:32:15,859 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:32:15,876 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:32:15,882 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:32:15,887 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:32:15,910 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 6.954 seconds (JVM running for 8.461)
+2021-11-29 14:32:25,404 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 14:32:25,404 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Initializing Servlet 'dispatcherServlet'
+2021-11-29 14:32:25,407 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 3 ms
+2021-11-29 14:32:25,485 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-1} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:32:38,460 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-3} Convidado cadastrado
+2021-11-29 14:32:54,505 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-4} Convidado cadastrado
+2021-11-29 14:33:01,262 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-5} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:33:14,939 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-6} Convidado cadastrado
+2021-11-29 14:33:25,047 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-7} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:33:55,997 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-8} Convidado cadastrado
+2021-11-29 14:34:02,751 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-9} Convidado cadastrado
+2021-11-29 14:34:28,729 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-10} Convidado cadastrado
+2021-11-29 14:34:56,486 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-2} Convidado cadastrado
+2021-11-29 14:35:07,407 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-1} Convidado cadastrado
+2021-11-29 14:35:39,306 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-4} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:35:39,313 INFO com.zaxxer.hikari.HikariDataSource {Thread-4} HikariPool-1 - Shutdown initiated...
+2021-11-29 14:35:39,323 INFO com.zaxxer.hikari.HikariDataSource {Thread-4} HikariPool-1 - Shutdown completed.
+2021-11-29 14:35:39,444 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:35:39,487 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 15508 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:35:39,487 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:35:39,487 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:35:39,919 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:35:39,938 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:35:40,163 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:35:40,164 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:35:40,164 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:35:40,165 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:35:40,192 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:35:40,192 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 702 ms
+2021-11-29 14:35:40,241 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:35:40,250 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-2 - Starting...
+2021-11-29 14:35:40,401 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-2 - Start completed.
+2021-11-29 14:35:40,401 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:35:40,550 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:35:40,550 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:35:40,969 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:35:41,010 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:35:41,065 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:35:41,127 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:35:41,129 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:35:41,130 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:35:41,130 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:35:41,149 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:35:41,200 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:35:41,229 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:35:41,243 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:35:41,250 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:35:41,258 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:35:41,273 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:35:41,289 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:35:41,295 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:35:41,300 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:35:41,309 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.86 seconds (JVM running for 213.861)
+2021-11-29 14:35:41,313 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-29 14:35:47,716 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-7} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:35:47,718 INFO com.zaxxer.hikari.HikariDataSource {Thread-7} HikariPool-2 - Shutdown initiated...
+2021-11-29 14:35:47,730 INFO com.zaxxer.hikari.HikariDataSource {Thread-7} HikariPool-2 - Shutdown completed.
+2021-11-29 14:35:47,820 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA

@@ -31,11 +31,6 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 		return new ApiInfoBuilder().title("REST API Eventos")
 				.description("\"REST API\"").version("1.0.0").build();
 	}
-	
-	 @Override
-     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
-         argumentResolvers.add( new PageableHandlerMethodArgumentResolver());
-     }
 
 	@Override
 	protected void addResourceHandlers(ResourceHandlerRegistry registry) {
@@ -45,5 +40,10 @@ public class SwaggerConfig extends WebMvcConfigurationSupport {
 		registry.addResourceHandler("/webjars/**").
 		addResourceLocations("classpath:/META-INF/resources/webjars/");
 	}
+	
+	 @Override
+     public void addArgumentResolvers(List<HandlerMethodArgumentResolver> argumentResolvers) {
+         argumentResolvers.add( new PageableHandlerMethodArgumentResolver());
+     }
 	
 }

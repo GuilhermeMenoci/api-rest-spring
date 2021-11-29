@@ -8,6 +8,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import br.com.caelum.stella.validation.CPFValidator;
 import br.com.magna.api.dto.ConvidadoDto;
 import br.com.magna.api.entity.ConvidadoEntity;
 import br.com.magna.api.repository.ConvidadoRepository;
@@ -49,12 +50,18 @@ public class ConvidadoService {
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
 		if (verificaConvidado(convidadoDto)) {
 			System.out.println("Convidado já cadastrado");
-			return null;
-		} else {
-			ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
-			ConvidadoDto convidadoDtoSave = convertDto(convidado);
-			return convidadoDtoSave;
+		} 
+		else {
+			if(validCpf(convidadoDto.getCpf())) {
+				ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
+				ConvidadoDto convidadoDtoSave = convertDto(convidado);
+				return convidadoDtoSave;
+			} else {
+				System.out.println("CPF inválido!");
+			}
+			
 		}
+		return null;
 	}
 
 	// Atualizando convidado
@@ -74,6 +81,17 @@ public class ConvidadoService {
 	}
 
 	
+	//Valindo se o CPF existe
+	public boolean validCpf(String cpf) {
+		CPFValidator cpfValidator = new CPFValidator();
+		try {
+			cpfValidator.assertValid(cpf);
+			return true;
+		} catch(Exception ex) {
+			ex.printStackTrace();
+			return false;
+		}
+	}
 	
 	
 	// CONVERSORES//
