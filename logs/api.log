@@ -4553,3 +4553,574 @@ java.lang.IllegalStateException: No primary or single unique constructor found f
 2021-11-29 12:48:43,895 INFO com.zaxxer.hikari.HikariDataSource {Thread-15} HikariPool-4 - Shutdown initiated...
 2021-11-29 12:48:43,899 INFO com.zaxxer.hikari.HikariDataSource {Thread-15} HikariPool-4 - Shutdown completed.
 2021-11-29 12:48:43,948 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 12:48:43,974 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 15528 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 12:48:43,975 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 12:48:43,975 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 12:48:44,082 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 12:48:44,092 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 8 ms. Found 3 JPA repository interfaces.
+2021-11-29 12:48:44,157 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 12:48:44,158 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 12:48:44,158 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 12:48:44,158 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 12:48:44,173 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 12:48:44,173 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 197 ms
+2021-11-29 12:48:44,286 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 12:48:44,310 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-5 - Starting...
+2021-11-29 12:48:44,515 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-5 - Start completed.
+2021-11-29 12:48:44,515 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 12:48:44,664 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 12:48:44,664 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 12:48:44,877 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 12:48:44,993 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 12:48:45,000 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 12:48:45,002 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 12:48:45,005 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.052 seconds (JVM running for 56.763)
+2021-11-29 12:48:45,010 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#formContentFilter matched:
+      - @ConditionalOnProperty (spring.mvc.formcontent.filter.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+      - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+      - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#themeResolver matched:
+      - @ConditionalOnMissingBean (names: themeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.hiddenmethod.filter.enabled) did not find property 'enabled' (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-11-29 12:48:51,043 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 12:48:51,043 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Initializing Servlet 'dispatcherServlet'
+2021-11-29 12:48:51,043 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 0 ms
+2021-11-29 12:48:53,962 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-9} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 13:55:01,150 WARN com.zaxxer.hikari.pool.HikariPool {HikariPool-5 housekeeper} HikariPool-5 - Thread starvation or clock leap detected (housekeeper delta=1h5m46s531ms778µs).
+2021-11-29 13:56:29,401 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-6} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 13:56:35,817 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-7} Evento com codigo: 15 encontrado
+2021-11-29 13:56:39,322 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-8} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 13:58:29,636 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-19} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 13:58:29,636 INFO com.zaxxer.hikari.HikariDataSource {Thread-19} HikariPool-5 - Shutdown initiated...
+2021-11-29 13:58:29,647 INFO com.zaxxer.hikari.HikariDataSource {Thread-19} HikariPool-5 - Shutdown completed.
+2021-11-29 13:58:29,725 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 13:58:29,766 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 15528 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 13:58:29,766 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 13:58:29,766 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 13:58:30,138 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 13:58:30,153 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 14 ms. Found 3 JPA repository interfaces.
+2021-11-29 13:58:30,335 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 13:58:30,336 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 13:58:30,337 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 13:58:30,337 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 13:58:30,369 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 13:58:30,369 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 601 ms
+2021-11-29 13:58:30,414 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 13:58:30,419 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-6 - Starting...
+2021-11-29 13:58:30,551 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-6 - Start completed.
+2021-11-29 13:58:30,552 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 13:58:30,727 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 13:58:30,728 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 13:58:31,184 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 13:58:31,232 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 13:58:31,291 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 13:58:31,369 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 13:58:31,372 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 13:58:31,373 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 13:58:31,373 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 13:58:31,389 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 13:58:31,445 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 13:58:31,469 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 13:58:31,484 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 13:58:31,490 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 13:58:31,494 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 13:58:31,505 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 13:58:31,517 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 13:58:31,522 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 13:58:31,526 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 13:58:31,532 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.801 seconds (JVM running for 4243.296)
+2021-11-29 13:58:31,536 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   Swagger2DocumentationConfiguration matched:
+      - @ConditionalOnWebApplication (required) found 'session' scope (OnWebApplicationCondition)
+
+
+Negative matches:
+-----------------
+
+   WebMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport' swaggerConfig (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-11-29 13:58:36,578 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-2} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 13:58:36,580 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-2} Initializing Servlet 'dispatcherServlet'
+2021-11-29 13:58:36,585 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-2} Completed initialization in 5 ms
+2021-11-29 13:58:36,597 ERROR org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/].[dispatcherServlet] {http-nio-8091-exec-2} Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.IllegalStateException: No primary or single unique constructor found for interface org.springframework.data.domain.Pageable] with root cause
+java.lang.IllegalStateException: No primary or single unique constructor found for interface org.springframework.data.domain.Pageable
+	at org.springframework.beans.BeanUtils.getResolvableConstructor(BeanUtils.java:267)
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.createAttribute(ModelAttributeMethodProcessor.java:219)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletModelAttributeMethodProcessor.createAttribute(ServletModelAttributeMethodProcessor.java:85)
+	at org.springframework.web.method.annotation.ModelAttributeMethodProcessor.resolveArgument(ModelAttributeMethodProcessor.java:147)
+	at org.springframework.web.method.support.HandlerMethodArgumentResolverComposite.resolveArgument(HandlerMethodArgumentResolverComposite.java:121)
+	at org.springframework.web.method.support.InvocableHandlerMethod.getMethodArgumentValues(InvocableHandlerMethod.java:179)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:146)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:895)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:808)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1067)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:655)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:764)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:540)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:895)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1722)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+2021-11-29 13:58:59,642 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-23} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 13:58:59,643 INFO com.zaxxer.hikari.HikariDataSource {Thread-23} HikariPool-6 - Shutdown initiated...
+2021-11-29 13:58:59,653 INFO com.zaxxer.hikari.HikariDataSource {Thread-23} HikariPool-6 - Shutdown completed.
+2021-11-29 13:58:59,739 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 13:58:59,787 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 15528 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 13:58:59,787 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 13:58:59,787 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 13:59:00,084 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 13:59:00,114 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 29 ms. Found 3 JPA repository interfaces.
+2021-11-29 13:59:00,370 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 13:59:00,370 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 13:59:00,370 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 13:59:00,370 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 13:59:00,428 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 13:59:00,428 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 625 ms
+2021-11-29 13:59:00,490 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 13:59:00,507 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-7 - Starting...
+2021-11-29 13:59:00,663 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-7 - Start completed.
+2021-11-29 13:59:00,663 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 13:59:00,931 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 13:59:00,932 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 13:59:01,392 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 13:59:01,546 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 13:59:01,568 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 13:59:01,572 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 13:59:01,572 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.832 seconds (JVM running for 4273.342)
+2021-11-29 13:59:01,582 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   WebMvcAutoConfiguration matched:
+      - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+      - found 'session' scope (OnWebApplicationCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration#formContentFilter matched:
+      - @ConditionalOnProperty (spring.mvc.formcontent.filter.enabled) matched (OnPropertyCondition)
+      - @ConditionalOnMissingBean (types: org.springframework.web.filter.FormContentFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#flashMapManager matched:
+      - @ConditionalOnMissingBean (names: flashMapManager; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#localeResolver matched:
+      - @ConditionalOnMissingBean (names: localeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.EnableWebMvcConfiguration#themeResolver matched:
+      - @ConditionalOnMissingBean (names: themeResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#defaultViewResolver matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.InternalResourceViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#requestContextFilter matched:
+      - @ConditionalOnMissingBean (types: org.springframework.web.context.request.RequestContextListener,org.springframework.web.filter.RequestContextFilter; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#viewResolver matched:
+      - @ConditionalOnBean (types: org.springframework.web.servlet.ViewResolver; SearchStrategy: all) found beans 'defaultViewResolver', 'beanNameViewResolver', 'mvcViewResolver'; @ConditionalOnMissingBean (names: viewResolver types: org.springframework.web.servlet.view.ContentNegotiatingViewResolver; SearchStrategy: all) did not find any beans (OnBeanCondition)
+
+
+Negative matches:
+-----------------
+
+   WebMvcAutoConfiguration#hiddenHttpMethodFilter:
+      Did not match:
+         - @ConditionalOnProperty (spring.mvc.hiddenmethod.filter.enabled) did not find property 'enabled' (OnPropertyCondition)
+
+   WebMvcAutoConfiguration.WebMvcAutoConfigurationAdapter#beanNameViewResolver:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.view.BeanNameViewResolver; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.view.BeanNameViewResolver' beanNameViewResolver (OnBeanCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-11-29 14:08:16,916 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-27} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:08:16,918 INFO com.zaxxer.hikari.HikariDataSource {Thread-27} HikariPool-7 - Shutdown initiated...
+2021-11-29 14:08:16,935 INFO com.zaxxer.hikari.HikariDataSource {Thread-27} HikariPool-7 - Shutdown completed.
+2021-11-29 14:08:17,067 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:08:17,104 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 15528 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:08:17,105 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:08:17,105 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:08:17,544 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:08:17,563 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 19 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:08:17,695 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:08:17,696 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:08:17,696 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:08:17,696 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:08:17,728 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:08:17,728 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 620 ms
+2021-11-29 14:08:17,781 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:08:17,786 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-8 - Starting...
+2021-11-29 14:08:17,926 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-8 - Start completed.
+2021-11-29 14:08:17,927 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:08:18,115 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:08:18,116 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:08:18,644 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:08:18,713 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:08:18,811 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:08:18,865 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:08:18,867 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:08:18,868 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:08:18,869 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:08:18,881 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:08:18,930 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:08:18,951 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:08:18,964 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:08:18,968 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:08:18,972 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:08:18,982 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:08:18,994 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:08:18,998 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:08:19,002 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:08:19,008 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.936 seconds (JVM running for 4830.772)
+2021-11-29 14:08:19,011 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation delta:
+
+
+==========================
+CONDITION EVALUATION DELTA
+==========================
+
+
+Positive matches:
+-----------------
+
+   Swagger2DocumentationConfiguration matched:
+      - @ConditionalOnWebApplication (required) found 'session' scope (OnWebApplicationCondition)
+
+
+Negative matches:
+-----------------
+
+   WebMvcAutoConfiguration:
+      Did not match:
+         - @ConditionalOnMissingBean (types: org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport; SearchStrategy: all) found beans of type 'org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport' swaggerConfig (OnBeanCondition)
+      Matched:
+         - @ConditionalOnClass found required classes 'javax.servlet.Servlet', 'org.springframework.web.servlet.DispatcherServlet', 'org.springframework.web.servlet.config.annotation.WebMvcConfigurer' (OnClassCondition)
+         - found 'session' scope (OnWebApplicationCondition)
+
+
+Exclusions:
+-----------
+
+    None
+
+
+Unconditional classes:
+----------------------
+
+    None
+
+
+
+2021-11-29 14:08:38,982 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 14:08:38,982 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Initializing Servlet 'dispatcherServlet'
+2021-11-29 14:08:38,982 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 0 ms
+2021-11-29 14:08:39,796 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-9} No mapping for GET /
+2021-11-29 14:08:39,826 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-2} No mapping for GET /csrf
+2021-11-29 14:08:43,584 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-5} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 14:09:17,686 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-31} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:09:17,689 INFO com.zaxxer.hikari.HikariDataSource {Thread-31} HikariPool-8 - Shutdown initiated...
+2021-11-29 14:09:17,697 INFO com.zaxxer.hikari.HikariDataSource {Thread-31} HikariPool-8 - Shutdown completed.
+2021-11-29 14:09:17,835 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:09:17,895 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 15528 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:09:17,895 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:09:17,895 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:09:18,225 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:09:18,236 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 11 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:09:18,406 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:09:18,407 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:09:18,408 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:09:18,408 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:09:18,439 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:09:18,439 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 541 ms
+2021-11-29 14:09:18,488 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:09:18,493 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-9 - Starting...
+2021-11-29 14:09:18,624 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-9 - Start completed.
+2021-11-29 14:09:18,624 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:09:18,782 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:09:18,782 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:09:19,134 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:09:19,176 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:09:19,255 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:09:19,366 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:09:19,369 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:09:19,370 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:09:19,371 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:09:19,380 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:09:19,418 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:09:19,440 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:09:19,455 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:09:19,460 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:09:19,464 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:09:19,472 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:09:19,482 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:09:19,486 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:09:19,489 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:09:19,496 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 1.65 seconds (JVM running for 4891.259)
+2021-11-29 14:09:19,497 INFO org.springframework.boot.devtools.autoconfigure.ConditionEvaluationDeltaLoggingListener {restartedMain} Condition evaluation unchanged
+2021-11-29 14:09:26,345 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 14:09:26,345 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Initializing Servlet 'dispatcherServlet'
+2021-11-29 14:09:26,346 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 1 ms
+2021-11-29 14:09:26,956 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-9} No mapping for GET /
+2021-11-29 14:09:26,973 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-10} No mapping for GET /csrf
+2021-11-29 14:09:30,358 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-1} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 14:09:38,480 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-2} Usuarios: Page request [number: 0, size 5, sort: login: ASC]
+2021-11-29 14:09:38,532 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver {http-nio-8091-exec-2} Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session (through reference chain: org.springframework.data.domain.PageImpl["content"]->java.util.Collections$UnmodifiableRandomAccessList[0]->br.com.magna.api.dto.UsuarioDto["evento"]->br.com.magna.api.entity.EventoEntity$HibernateProxy$xkQktmJh["codigo"])]
+2021-11-29 14:09:45,304 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-5} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:10:02,760 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-6} Usuarios: Page request [number: 0, size 5, sort: login: ASC]
+2021-11-29 14:10:02,767 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver {http-nio-8091-exec-6} Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session (through reference chain: org.springframework.data.domain.PageImpl["content"]->java.util.Collections$UnmodifiableRandomAccessList[0]->br.com.magna.api.dto.UsuarioDto["evento"]->br.com.magna.api.entity.EventoEntity$HibernateProxy$xkQktmJh["codigo"])]
+2021-11-29 14:10:24,344 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-9} Usuarios: Page request [number: 0, size 20, sort: UNSORTED]
+2021-11-29 14:10:24,349 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver {http-nio-8091-exec-9} Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session (through reference chain: org.springframework.data.domain.PageImpl["content"]->java.util.Collections$UnmodifiableRandomAccessList[0]->br.com.magna.api.dto.UsuarioDto["evento"]->br.com.magna.api.entity.EventoEntity$HibernateProxy$xkQktmJh["codigo"])]
+2021-11-29 14:10:30,604 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-2} Usuario com login: Adm encontrado
+2021-11-29 14:10:30,723 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver {http-nio-8091-exec-2} Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session (through reference chain: br.com.magna.api.dto.UsuarioDto["evento"]->br.com.magna.api.entity.EventoEntity$HibernateProxy$xkQktmJh["codigo"])]
+2021-11-29 14:10:33,425 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-5} Usuarios: Page request [number: 0, size 5, sort: login: ASC]
+2021-11-29 14:10:33,428 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver {http-nio-8091-exec-5} Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session (through reference chain: org.springframework.data.domain.PageImpl["content"]->java.util.Collections$UnmodifiableRandomAccessList[0]->br.com.magna.api.dto.UsuarioDto["evento"]->br.com.magna.api.entity.EventoEntity$HibernateProxy$xkQktmJh["codigo"])]
+2021-11-29 14:10:36,879 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-6} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 14:10:40,032 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-9} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:10:41,526 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-10} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:10:42,058 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-8} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:10:42,608 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-3} Convidados: Page request [number: 0, size 5, sort: nome: ASC]
+2021-11-29 14:10:54,320 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(28)-127.0.0.1} Application shutdown requested.
+2021-11-29 14:10:54,360 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {RMI TCP Connection(28)-127.0.0.1} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:10:54,361 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(28)-127.0.0.1} HikariPool-9 - Shutdown initiated...
+2021-11-29 14:10:54,368 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(28)-127.0.0.1} HikariPool-9 - Shutdown completed.
+2021-11-29 14:11:01,699 INFO br.com.magna.api.ApiApplication {main} API INICIADA
+2021-11-29 14:11:02,000 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:11:02,588 INFO org.hibernate.validator.internal.util.Version {background-preinit} HV000001: Hibernate Validator 6.2.0.Final
+2021-11-29 14:11:02,593 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 17696 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:11:02,593 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:11:02,594 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:11:02,688 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-29 14:11:02,688 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-29 14:11:04,440 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:11:04,567 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 105 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:11:05,841 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:11:05,866 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:11:05,867 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:11:05,867 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:11:06,055 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:11:06,055 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 3366 ms
+2021-11-29 14:11:06,278 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:11:06,343 INFO org.hibernate.Version {restartedMain} HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-11-29 14:11:06,568 INFO org.hibernate.annotations.common.Version {restartedMain} HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-29 14:11:06,694 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Starting...
+2021-11-29 14:11:07,070 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Start completed.
+2021-11-29 14:11:07,094 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:11:08,633 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:11:08,651 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:11:10,821 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:11:10,986 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:11:11,273 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:11:11,472 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:11:11,520 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:11:11,521 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:11:11,551 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:11:11,617 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:11:11,960 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:11:12,013 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:11:12,035 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:11:12,046 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:11:12,048 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:11:12,069 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:11:12,105 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:11:12,116 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:11:12,116 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:11:12,153 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 10.142 seconds (JVM running for 11.954)
+2021-11-29 14:11:13,601 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 14:11:13,601 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Initializing Servlet 'dispatcherServlet'
+2021-11-29 14:11:13,602 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 1 ms
+2021-11-29 14:11:14,541 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-9} No mapping for GET /
+2021-11-29 14:11:14,608 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-9} No mapping for GET /csrf
+2021-11-29 14:11:31,516 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-1} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 14:11:39,203 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-3} Usuarios: Page request [number: 0, size 5, sort: login: ASC]
+2021-11-29 14:11:39,244 WARN org.springframework.web.servlet.mvc.support.DefaultHandlerExceptionResolver {http-nio-8091-exec-3} Resolved [org.springframework.http.converter.HttpMessageNotWritableException: Could not write JSON: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session; nested exception is com.fasterxml.jackson.databind.JsonMappingException: could not initialize proxy [br.com.magna.api.entity.EventoEntity#3] - no Session (through reference chain: org.springframework.data.domain.PageImpl["content"]->java.util.Collections$UnmodifiableRandomAccessList[0]->br.com.magna.api.dto.UsuarioDto["evento"]->br.com.magna.api.entity.EventoEntity$HibernateProxy$9uAPLegQ["codigo"])]
+2021-11-29 14:12:51,906 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {Thread-4} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:12:51,914 INFO com.zaxxer.hikari.HikariDataSource {Thread-4} HikariPool-1 - Shutdown initiated...
+2021-11-29 14:12:51,925 INFO com.zaxxer.hikari.HikariDataSource {Thread-4} HikariPool-1 - Shutdown completed.
+2021-11-29 14:12:52,038 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:12:52,182 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 17696 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:12:52,182 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:12:52,183 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:12:56,995 INFO br.com.magna.api.ApiApplication {main} API INICIADA
+2021-11-29 14:12:57,262 INFO br.com.magna.api.ApiApplication {restartedMain} API INICIADA
+2021-11-29 14:12:57,838 INFO org.hibernate.validator.internal.util.Version {background-preinit} HV000001: Hibernate Validator 6.2.0.Final
+2021-11-29 14:12:57,846 INFO br.com.magna.api.ApiApplication {restartedMain} Starting ApiApplication using Java 15.0.2 on GuiMenoci with PID 9548 (D:\Eclipse Java EE\Workspace Java EE\api\target\classes started by guimenoci in D:\Eclipse Java EE\Workspace Java EE\api)
+2021-11-29 14:12:57,846 DEBUG br.com.magna.api.ApiApplication {restartedMain} Running with Spring Boot v2.6.0, Spring v5.3.13
+2021-11-29 14:12:57,846 INFO br.com.magna.api.ApiApplication {restartedMain} No active profile set, falling back to default profiles: default
+2021-11-29 14:12:57,906 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-11-29 14:12:57,906 INFO org.springframework.boot.devtools.env.DevToolsPropertyDefaultsPostProcessor {restartedMain} For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-11-29 14:12:59,300 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-29 14:12:59,389 INFO org.springframework.data.repository.config.RepositoryConfigurationDelegate {restartedMain} Finished Spring Data repository scanning in 73 ms. Found 3 JPA repository interfaces.
+2021-11-29 14:13:00,375 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat initialized with port(s): 8091 (http)
+2021-11-29 14:13:00,396 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Initializing ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:13:00,397 INFO org.apache.catalina.core.StandardService {restartedMain} Starting service [Tomcat]
+2021-11-29 14:13:00,397 INFO org.apache.catalina.core.StandardEngine {restartedMain} Starting Servlet engine: [Apache Tomcat/9.0.55]
+2021-11-29 14:13:00,569 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {restartedMain} Initializing Spring embedded WebApplicationContext
+2021-11-29 14:13:00,569 INFO org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext {restartedMain} Root WebApplicationContext: initialization completed in 2663 ms
+2021-11-29 14:13:00,790 INFO org.hibernate.jpa.internal.util.LogHelper {restartedMain} HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-29 14:13:00,880 INFO org.hibernate.Version {restartedMain} HHH000412: Hibernate ORM core version 5.6.1.Final
+2021-11-29 14:13:01,222 INFO org.hibernate.annotations.common.Version {restartedMain} HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-29 14:13:01,346 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Starting...
+2021-11-29 14:13:01,718 INFO com.zaxxer.hikari.HikariDataSource {restartedMain} HikariPool-1 - Start completed.
+2021-11-29 14:13:01,745 INFO org.hibernate.dialect.Dialect {restartedMain} HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2021-11-29 14:13:02,846 INFO org.hibernate.engine.transaction.jta.platform.internal.JtaPlatformInitiator {restartedMain} HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-29 14:13:02,860 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {restartedMain} Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:13:04,355 INFO springfox.documentation.spring.web.PropertySourcedRequestMappingHandlerMapping {restartedMain} Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-11-29 14:13:04,511 INFO org.springframework.boot.devtools.autoconfigure.OptionalLiveReloadServer {restartedMain} LiveReload server is running on port 35729
+2021-11-29 14:13:04,729 WARN org.springframework.boot.autoconfigure.orm.jpa.JpaBaseConfiguration$JpaWebConfiguration {restartedMain} spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-29 14:13:04,852 INFO org.apache.coyote.http11.Http11NioProtocol {restartedMain} Starting ProtocolHandler ["http-nio-8091"]
+2021-11-29 14:13:04,884 INFO org.springframework.boot.web.embedded.tomcat.TomcatWebServer {restartedMain} Tomcat started on port(s): 8091 (http) with context path ''
+2021-11-29 14:13:04,885 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Context refreshed
+2021-11-29 14:13:04,911 INFO springfox.documentation.spring.web.plugins.DocumentationPluginsBootstrapper {restartedMain} Found 1 custom documentation plugin(s)
+2021-11-29 14:13:04,962 INFO springfox.documentation.spring.web.scanners.ApiListingReferenceScanner {restartedMain} Scanning for api listing references
+2021-11-29 14:13:05,135 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCpfUsingGET_1
+2021-11-29 14:13:05,190 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_1
+2021-11-29 14:13:05,219 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listCodigoUsingGET_1
+2021-11-29 14:13:05,229 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_1
+2021-11-29 14:13:05,236 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_1
+2021-11-29 14:13:05,252 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: deleteUsingDELETE_2
+2021-11-29 14:13:05,278 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: listLoginUsingGET_1
+2021-11-29 14:13:05,287 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: postUsingPOST_2
+2021-11-29 14:13:05,295 INFO springfox.documentation.spring.web.readers.operation.CachingOperationNameGenerator {restartedMain} Generating unique operation named: putUsingPUT_2
+2021-11-29 14:13:05,320 INFO br.com.magna.api.ApiApplication {restartedMain} Started ApiApplication in 8.048 seconds (JVM running for 9.739)
+2021-11-29 14:13:20,477 INFO org.apache.catalina.core.ContainerBase.[Tomcat].[localhost].[/] {http-nio-8091-exec-1} Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-29 14:13:20,478 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Initializing Servlet 'dispatcherServlet'
+2021-11-29 14:13:20,479 INFO org.springframework.web.servlet.DispatcherServlet {http-nio-8091-exec-1} Completed initialization in 1 ms
+2021-11-29 14:13:20,537 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-1} Eventos: Page request [number: 0, size 5, sort: codigo: ASC]
+2021-11-29 14:13:23,122 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-3} Usuarios: Page request [number: 0, size 5, sort: login: ASC]
+2021-11-29 14:14:41,541 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-3} No mapping for GET /
+2021-11-29 14:14:41,569 WARN org.springframework.web.servlet.PageNotFound {http-nio-8091-exec-4} No mapping for GET /csrf
+2021-11-29 14:15:19,928 INFO br.com.magna.api.ApiApplication {http-nio-8091-exec-6} Evento com codigo: 15 encontrado
+2021-11-29 14:20:26,178 INFO org.springframework.boot.admin.SpringApplicationAdminMXBeanRegistrar$SpringApplicationAdmin {RMI TCP Connection(15)-127.0.0.1} Application shutdown requested.
+2021-11-29 14:20:26,218 INFO org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean {RMI TCP Connection(15)-127.0.0.1} Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-11-29 14:20:26,223 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(15)-127.0.0.1} HikariPool-1 - Shutdown initiated...
+2021-11-29 14:20:26,230 INFO com.zaxxer.hikari.HikariDataSource {RMI TCP Connection(15)-127.0.0.1} HikariPool-1 - Shutdown completed.

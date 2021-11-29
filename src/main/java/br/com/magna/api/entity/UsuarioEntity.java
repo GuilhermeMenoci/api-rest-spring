@@ -24,7 +24,7 @@ public class UsuarioEntity implements Serializable{
 	private Long id;
 	private String login;
 	private String senha;
-	@OneToOne(fetch = FetchType.LAZY)
+	@OneToOne(fetch = FetchType.EAGER)
 	private EventoEntity evento;
 
 	public UsuarioEntity() {
