@@ -68,10 +68,10 @@ public class UsuarioEntity implements Serializable{
 	public void setEvento(EventoEntity evento) {
 		this.evento = evento;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Login: " + this.login + ", Senha: " + this.senha + ", Evento: " + this.evento;
+		return "UsuarioEntity [id=" + id + ", login=" + login + ", senha=" + senha + ", evento=" + evento + "]";
 	}
 
 	@Override

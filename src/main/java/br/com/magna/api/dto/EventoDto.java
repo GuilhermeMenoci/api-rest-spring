@@ -8,21 +8,23 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
 //Dto - Dados que vou enviar/mostrar para o client
-public class EventoDto implements Serializable{
-	
+public class EventoDto implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
+
 	@NotNull
 	private Long codigo;
-	@NotNull @NotEmpty
+	@NotNull
+	@NotEmpty
 	private String nomeEvento;
 	private LocalDate data = LocalDate.now();
-	@NotNull @NotEmpty
+	@NotNull
+	@NotEmpty
 	private String cidade;
-	
+
 	public EventoDto() {
 	}
-	
+
 	public Long getCodigo() {
 		return codigo;
 	}
@@ -55,6 +57,12 @@ public class EventoDto implements Serializable{
 		return cidade;
 	}
 
+	@Override
+	public String toString() {
+		return "EventoDto [codigo=" + codigo + ", nomeEvento=" + nomeEvento + ", data=" + data + 
+				", cidade=" + cidade
+				+ "]";
+	}
 
 	@Override
 	public int hashCode() {
@@ -71,11 +79,7 @@ public class EventoDto implements Serializable{
 			return false;
 		EventoDto other = (EventoDto) obj;
 		return Objects.equals(cidade, other.cidade) && Objects.equals(codigo, other.codigo)
-				&& Objects.equals(data, other.data)
-				&& Objects.equals(nomeEvento, other.nomeEvento);
+				&& Objects.equals(data, other.data) && Objects.equals(nomeEvento, other.nomeEvento);
 	}
-	
-	
-	
-	
+
 }

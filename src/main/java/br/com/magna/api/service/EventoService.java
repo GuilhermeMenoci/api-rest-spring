@@ -77,12 +77,12 @@ public class EventoService {
 	public void delete(Long codigo) throws NotFoundException {
 		eventoRepository.deleteByCodigo(codigo);
 	}
-	
+
 	// ------------------------------- //
 
 	// CONVERSORES//
 
-	//Construtor do EventoDto
+	// Construtor do EventoDto
 	public EventoDto eventoDto(EventoEntity evento) {
 		EventoDto dto = new EventoDto();
 		dto.setCodigo(evento.getCodigo());
@@ -100,12 +100,12 @@ public class EventoService {
 	public EventoEntity convertEntity(EventoDto evento) {
 		return modelMapper.map(evento, EventoEntity.class);
 	}
-	
+
 	// Conversor Page de Entity para Dto
 	public Page<EventoDto> pageDto(Page<EventoEntity> eventoEntity) {
 		return eventoEntity.map(convert -> this.eventoDto(convert));
 	}
-	
+
 //	// Convertando a lista de Entity para Dto
 //	public List<EventoDto> listDto(List<EventoEntity> evento) {
 //		List<EventoDto> eventos = evento.stream().map(EventoDto::new).collect(Collectors.toList());

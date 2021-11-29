@@ -47,7 +47,7 @@ public class UsuarioDto implements Serializable{
 	
 	@Override
 	public String toString() {
-		return "Login: " + this.login + ", Senha: " + this.senha + ", Evento: " + this.evento;
+		return "UsuarioDto [login=" + login + ", senha=" + senha + ", evento=" + evento + "]";
 	}
 
 	@Override

@@ -71,7 +71,7 @@ public class ConvidadoEntity implements Serializable{
 
 	@Override
 	public String toString() {
-		return "CPF: " + this.cpf + ", Nome: " + this.nome + ", Evento: " + this.evento;
+		return "ConvidadoEntity [id=" + id + ", cpf=" + cpf + ", nome=" + nome + ", evento=" + evento + "]";
 	}
 
 	@Override

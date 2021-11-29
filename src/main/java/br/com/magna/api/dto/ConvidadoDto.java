@@ -44,12 +44,12 @@ public class ConvidadoDto implements Serializable{
 	public void setEvento(EventoEntity evento) {
 		this.evento = evento;
 	}
-
+	
 	@Override
 	public String toString() {
-		return "Nome: " + this.nome + ", CPF: " + this.cpf + ", Evento: " + this.evento;
+		return "ConvidadoDto [cpf=" + cpf + ", nome=" + nome + ", evento=" + evento + "]";
 	}
-	
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(cpf, evento, nome);

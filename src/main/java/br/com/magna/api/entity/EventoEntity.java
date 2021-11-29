@@ -26,8 +26,7 @@ public class EventoEntity implements Serializable{
 	private LocalDate data = LocalDate.now();
 	private String cidade;
 	
-	public EventoEntity() {
-	}
+	public EventoEntity() {}
 	
 	public EventoEntity(Long id, Long codigo, String nomeEvento, String cidade) {
 		this.id = id;
@@ -75,10 +74,11 @@ public class EventoEntity implements Serializable{
 	public String getCidade() {
 		return cidade;
 	}
-	
+
 	@Override
 	public String toString() {
-		return "Nome do evento: " + this.nomeEvento + ", Cidade: " + this.cidade ;
+		return "EventoEntity [id=" + id + ", codigo=" + codigo + ", nomeEvento=" + nomeEvento + ", data=" + data
+				+ ", cidade=" + cidade + "]";
 	}
 
 	@Override

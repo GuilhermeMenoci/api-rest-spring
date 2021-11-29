@@ -27,7 +27,7 @@ public class UsuarioService {
 			Page<UsuarioEntity> usuarios = usuarioRepository.findAll(paginacao);
 			return pageDto(usuarios);
 		} else {
-			Page<UsuarioEntity> usuarios = usuarioRepository.findByLogin(login , paginacao);
+			Page<UsuarioEntity> usuarios = usuarioRepository.findByLogin(login, paginacao);
 			return pageDto(usuarios);
 		}
 	}
@@ -36,7 +36,6 @@ public class UsuarioService {
 	public UsuarioDto getLogin(String login) throws NotFoundException {
 		UsuarioEntity usuario = usuarioRepository.findByLogin(login);
 		UsuarioDto usuarioDto = convertDto(usuario);
-
 		if (usuarioDto == null) {
 			throw new NotFoundException();
 		}
@@ -51,7 +50,6 @@ public class UsuarioService {
 
 	// Criando usuario
 	public UsuarioDto createUsuarioDto(UsuarioDto usuarioDto) throws NotFoundException {
-		try {
 			if (verificaUsuario(usuarioDto))
 				System.out.println("Usuario já cadastrado");
 			else {
@@ -59,11 +57,7 @@ public class UsuarioService {
 				UsuarioDto usuarioDtoSave = convertDto(usuario);
 				return usuarioDtoSave;
 			}
-		} catch (Exception ex) {
-			ex.getStackTrace();
-			System.out.println("Usuario já cadastrado");
-		}
-		return null;
+			return null;
 	}
 
 	// Atualizando evento
@@ -85,8 +79,8 @@ public class UsuarioService {
 	}
 
 	// CONVERSORES//
-	
-	//Construtor do UsuarioDto
+
+	// Construtor do UsuarioDto
 	public UsuarioDto usuarioDto(UsuarioEntity usuario) {
 		UsuarioDto dto = new UsuarioDto();
 		dto.setLogin(usuario.getLogin());
@@ -104,7 +98,7 @@ public class UsuarioService {
 	public UsuarioEntity convertEntity(UsuarioDto usuario) {
 		return modelMapper.map(usuario, UsuarioEntity.class);
 	}
-	
+
 	// Conversor Page de Entity para Dto
 	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuarioEntity) {
 		return usuarioEntity.map(convert -> this.usuarioDto(convert));
