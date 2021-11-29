@@ -36,9 +36,13 @@ public class EventoDto implements Serializable {
 	public void setNomeEvento(String nomeEvento) {
 		this.nomeEvento = nomeEvento;
 	}
-
+	
+	public LocalDate getData() {
+		return data;
+	}
+	
 	public void setData(LocalDate data) {
-		this.data = data;
+		this.data = data;	
 	}
 
 	public void setCidade(String cidade) {
@@ -49,9 +53,7 @@ public class EventoDto implements Serializable {
 		return nomeEvento;
 	}
 
-	public LocalDate getData() {
-		return data;
-	}
+	
 
 	public String getCidade() {
 		return cidade;
@@ -59,8 +61,7 @@ public class EventoDto implements Serializable {
 
 	@Override
 	public String toString() {
-		return "EventoDto [codigo=" + codigo + ", nomeEvento=" + nomeEvento + ", data=" + data + 
-				", cidade=" + cidade
+		return "EventoDto [codigo=" + codigo + ", nomeEvento=" + nomeEvento + ", data=" + data + ", cidade=" + cidade
 				+ "]";
 	}
 
@@ -81,5 +82,7 @@ public class EventoDto implements Serializable {
 		return Objects.equals(cidade, other.cidade) && Objects.equals(codigo, other.codigo)
 				&& Objects.equals(data, other.data) && Objects.equals(nomeEvento, other.nomeEvento);
 	}
+
+	
 
 }

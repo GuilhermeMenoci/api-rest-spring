@@ -24,6 +24,8 @@ public class EventoEntity implements Serializable{
 	private Long codigo;
 	private String nomeEvento;
 	private LocalDate data = LocalDate.now();
+	//private LocalDate data;
+	//private String data;
 	private String cidade;
 	
 	public EventoEntity() {}
@@ -50,7 +52,10 @@ public class EventoEntity implements Serializable{
 	public void setNomeEvento(String nomeEvento) {
 		this.nomeEvento = nomeEvento;
 	}
-
+	
+	public LocalDate getData() {
+		return data;
+	}
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
@@ -67,9 +72,7 @@ public class EventoEntity implements Serializable{
 		return nomeEvento;
 	}
 
-	public LocalDate getData() {
-		return data;
-	}
+	
 
 	public String getCidade() {
 		return cidade;
@@ -96,9 +99,7 @@ public class EventoEntity implements Serializable{
 			return false;
 		EventoEntity other = (EventoEntity) obj;
 		return Objects.equals(cidade, other.cidade) && Objects.equals(codigo, other.codigo)
-				&&  Objects.equals(data, other.data)
-				&& Objects.equals(id, other.id) && Objects.equals(nomeEvento, other.nomeEvento);
+				&& Objects.equals(data, other.data) && Objects.equals(id, other.id)
+				&& Objects.equals(nomeEvento, other.nomeEvento);
 	}
-	
-	
 }

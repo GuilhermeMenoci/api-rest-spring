@@ -105,17 +105,5 @@ public class UsuarioService {
 		return usuarioEntity.map(convert -> this.usuarioDto(convert));
 	}
 
-//	// Convertando a lista de Entity para Dto
-//	public List<UsuarioDto> listDto(List<UsuarioEntity> usuario) {
-//		List<UsuarioDto> user = usuario.stream().map(UsuarioDto::new).collect(Collectors.toList());
-//		return user;
-//	}
-//	
-//	// Convertando a Page de Entity para Dto
-//	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuario) {
-//		// Page<EventoDto> eventos =
-//		// evento.stream().map(EventoDto::new).collect(Collectors.toList());
-//		return usuario.map(UsuarioDto::new);
-//	}
 
 }

@@ -50,16 +50,15 @@ public class ConvidadoService {
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
 		if (verificaConvidado(convidadoDto)) {
 			System.out.println("Convidado já cadastrado");
-		} 
-		else {
-			if(validCpf(convidadoDto.getCpf())) {
+		} else {
+			if (validCpf(convidadoDto.getCpf())) {
 				ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
 				ConvidadoDto convidadoDtoSave = convertDto(convidado);
 				return convidadoDtoSave;
 			} else {
 				System.out.println("CPF inválido!");
 			}
-			
+
 		}
 		return null;
 	}
@@ -80,20 +79,18 @@ public class ConvidadoService {
 		convidadoRepository.deleteByCpf(cpf);
 	}
 
-	
-	//Valindo se o CPF existe
+	// Valindo se o CPF existe
 	public boolean validCpf(String cpf) {
 		CPFValidator cpfValidator = new CPFValidator();
 		try {
 			cpfValidator.assertValid(cpf);
 			return true;
-		} catch(Exception ex) {
+		} catch (Exception ex) {
 			ex.printStackTrace();
 			return false;
 		}
 	}
-	
-	
+
 	// CONVERSORES//
 
 	// Construtor do ConvidadoDto
