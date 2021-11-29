@@ -14,6 +14,7 @@ import br.com.magna.api.repository.EventoRepository;
 
 @Service
 public class EventoService {
+	
 	@Autowired
 	private EventoRepository eventoRepository;
 

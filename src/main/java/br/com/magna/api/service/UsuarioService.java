@@ -50,14 +50,14 @@ public class UsuarioService {
 
 	// Criando usuario
 	public UsuarioDto createUsuarioDto(UsuarioDto usuarioDto) throws NotFoundException {
-			if (verificaUsuario(usuarioDto))
-				System.out.println("Usuario já cadastrado");
-			else {
-				UsuarioEntity usuario = usuarioRepository.save(convertEntity(usuarioDto));
-				UsuarioDto usuarioDtoSave = convertDto(usuario);
-				return usuarioDtoSave;
-			}
+		if (verificaUsuario(usuarioDto)) {
+			System.out.println("Usuario já cadastrado");
 			return null;
+		} else {
+			UsuarioEntity usuario = usuarioRepository.save(convertEntity(usuarioDto));
+			UsuarioDto usuarioDtoSave = convertDto(usuario);
+			return usuarioDtoSave;
+		}
 	}
 
 	// Atualizando evento
@@ -78,6 +78,9 @@ public class UsuarioService {
 		usuarioRepository.deleteByLogin(login);
 	}
 
+	
+	
+	
 	// CONVERSORES//
 
 	// Construtor do UsuarioDto

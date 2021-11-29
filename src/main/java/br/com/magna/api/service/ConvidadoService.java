@@ -47,14 +47,14 @@ public class ConvidadoService {
 
 	// Criando convidado
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws NotFoundException {
-		if (verificaConvidado(convidadoDto))
+		if (verificaConvidado(convidadoDto)) {
 			System.out.println("Convidado já cadastrado");
-		else {
+			return null;
+		} else {
 			ConvidadoEntity convidado = convidadoRepository.save(convertEntity(convidadoDto));
 			ConvidadoDto convidadoDtoSave = convertDto(convidado);
 			return convidadoDtoSave;
 		}
-		return null;
 	}
 
 	// Atualizando convidado
@@ -73,9 +73,12 @@ public class ConvidadoService {
 		convidadoRepository.deleteByCpf(cpf);
 	}
 
-	// CONVERSORES//
 	
-	//Construtor do ConvidadoDto
+	
+	
+	// CONVERSORES//
+
+	// Construtor do ConvidadoDto
 	public ConvidadoDto convidadoDto(ConvidadoEntity convidado) {
 		ConvidadoDto dto = new ConvidadoDto();
 		dto.setCpf(convidado.getCpf());
@@ -93,7 +96,7 @@ public class ConvidadoService {
 	public ConvidadoEntity convertEntity(ConvidadoDto convidado) {
 		return modelMapper.map(convidado, ConvidadoEntity.class);
 	}
-	
+
 	// Conversor Page de Entity para Dto
 	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidadoEntity) {
 		return convidadoEntity.map(convert -> this.convidadoDto(convert));

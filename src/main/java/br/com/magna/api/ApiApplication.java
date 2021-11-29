@@ -1,5 +1,7 @@
 package br.com.magna.api;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -7,10 +9,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 //@EnableSpringDataWebSupport 
 public class ApiApplication {
 	
-	//private static Logger logger = LoggerFactory.getLogger(ApiApplication.class);
+	private static Logger logger = LoggerFactory.getLogger(ApiApplication.class);
 
 	public static void main(String[] args) {
-		//logger.info("Iniciando API");
+		logger.info("API INICIADA");
 		SpringApplication.run(ApiApplication.class, args);
 		//logger.info("API iniciada");
 	}
