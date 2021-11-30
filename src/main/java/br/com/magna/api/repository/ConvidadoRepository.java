@@ -1,5 +1,7 @@
 package br.com.magna.api.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,7 +14,7 @@ import br.com.magna.api.entity.ConvidadoEntity;
 public interface ConvidadoRepository extends JpaRepository<ConvidadoEntity, Long>{
 
 	@Query("SELECT c FROM ConvidadoEntity c WHERE c.cpf = :cpf")
-	ConvidadoEntity findByCpf(String cpf);
+	Optional<ConvidadoEntity> findByCpf(String cpf);
 	
 	Boolean existsByCpf(String cpf);
 	

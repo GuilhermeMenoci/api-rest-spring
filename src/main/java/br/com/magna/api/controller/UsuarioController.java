@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.magna.api.dto.UsuarioDto;
 import br.com.magna.api.service.UsuarioService;
+import io.swagger.annotations.ApiOperation;
 
 @RestController
 @RequestMapping("/usuarios")
@@ -42,7 +43,8 @@ public class UsuarioController {
 //			return null;
 //		}
 //	}
-
+	
+	@ApiOperation("Listando usuarios com Page")
 	// Listando usuario com Page e ordem crescente
 	@GetMapping
 	public Page<UsuarioDto> listAllUser(Pageable pagina) {
@@ -56,6 +58,7 @@ public class UsuarioController {
 		return null;
 	}
 
+	@ApiOperation("Listando usuarios com login")
 	// Listando usuario por LOGIN
 	@GetMapping("/{login}")
 	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) {
@@ -69,6 +72,7 @@ public class UsuarioController {
 		}
 	}
 
+	@ApiOperation("Adicionando usuarios")
 	// Adicionando usuario
 	@PostMapping
 	public ResponseEntity<UsuarioDto> createUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
@@ -84,6 +88,7 @@ public class UsuarioController {
 		}
 	}
 
+	@ApiOperation("Atualizando usuario")
 	// Atualizando usuario
 	@PutMapping("/{login}")
 	@Transactional
@@ -95,12 +100,13 @@ public class UsuarioController {
 		} catch (NotFoundException ex) {
 			return ResponseEntity.notFound().build();	
 		} catch(EntityNotFoundException ex) {
-			return ResponseEntity.badRequest().build();
+			return ResponseEntity.notFound().build();
 		} catch(Exception ex) {
 			return ResponseEntity.badRequest().build();
 		}
 	}
 
+	@ApiOperation("Deletando usuario")
 	// Deletando usuario
 	@DeleteMapping("/{login}")
 	@Transactional
