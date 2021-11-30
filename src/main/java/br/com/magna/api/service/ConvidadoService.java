@@ -117,15 +117,4 @@ public class ConvidadoService {
 		return convidadoEntity.map(convert -> this.convidadoDto(convert));
 	}
 
-//	// Convertando a lista de Entity para Dto
-//	public List<ConvidadoDto> listDto(List<ConvidadoEntity> convidado) {
-//		List<ConvidadoDto> convidados = convidado.stream().map(ConvidadoDto::new).collect(Collectors.toList());
-//		return convidados;
-//	}
-//
-//	// Convertando a Page de Entity para Dto
-//	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidado) {
-//		return convidado.map(ConvidadoDto::new);
-//	}
-
 }

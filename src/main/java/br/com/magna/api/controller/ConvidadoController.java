@@ -38,8 +38,7 @@ public class ConvidadoController {
 	@ApiOperation("Listando convidados com Page")
 	// Listando convidados com Page e ordem crescente
 	@GetMapping
-	public Page<ConvidadoDto> listCpf(@RequestParam(required = false) String cpf, Pageable pagina)
-			throws NotFoundException {
+	public Page<ConvidadoDto> listCpf(@RequestParam(required = false) String cpf, Pageable pagina) {
 		try {
 			logger.info("Convidados: " + pagina);
 			return convidadoService.listPage(cpf, pagina);
@@ -54,11 +53,11 @@ public class ConvidadoController {
 	@ApiOperation("Listando convidados com cpf")
 	// Listando convidados por CPF
 	@GetMapping("/{cpf}")
-	public ResponseEntity<ConvidadoDto> listCpf(@PathVariable String cpf) throws NotFoundException {
+	public ResponseEntity<ConvidadoDto> listCpf(@PathVariable String cpf) {
 		try {
 			logger.info("Convidado com codigo: " + cpf + " encontrado");
 			return ResponseEntity.ok(convidadoService.getCpf(cpf));
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			logger.info("Convidado com codigo: " + cpf + " não encontrado");
@@ -70,12 +69,12 @@ public class ConvidadoController {
 	// Adicionando convidados
 	@PostMapping
 	@Transactional
-	public ResponseEntity<ConvidadoDto> post(@RequestBody @Valid ConvidadoDto convidadoDto) throws Exception {
+	public ResponseEntity<ConvidadoDto> post(@RequestBody @Valid ConvidadoDto convidadoDto) {
 		try {
 			ConvidadoDto convidadoDtoCreate = convidadoService.createConvidadoDto(convidadoDto);
 			logger.info("Convidado cadastrado");
 			return ResponseEntity.status(HttpStatus.CREATED).body(convidadoDtoCreate);
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Convidado não cadastrado");
 			logger.info("Evento não cadastrado");
@@ -93,7 +92,7 @@ public class ConvidadoController {
 			ConvidadoDto convidadoDtoUpdate = convidadoService.update(cpf, convidadoDto);
 			logger.info("Convidado com CPF: " + cpf + " atualizado");
 			return ResponseEntity.ok(convidadoDtoUpdate);
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.getMessage();
 			System.out.println("Convidado não encontrado");
 			logger.info("Convidado com CPF: " + cpf + " não atualizado/encontrado");

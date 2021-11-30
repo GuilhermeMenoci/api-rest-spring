@@ -38,11 +38,11 @@ public class EventoController {
 	@ApiOperation("Listando eventos com codigo")
 	// Listando eventos por CODIGO
 	@GetMapping("/{codigo}")
-	public ResponseEntity<EventoDto> listCodigo(@PathVariable Long codigo) throws NotFoundException {
+	public ResponseEntity<EventoDto> listCodigo(@PathVariable Long codigo) {
 		try {
 			logger.info("Evento com codigo: " + codigo + " encontrado");
 			return ResponseEntity.ok(eventoService.getCodigo(codigo));
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			logger.info("Evento com codigo: " + codigo + " não encontrado");
@@ -53,9 +53,7 @@ public class EventoController {
 	@ApiOperation("Listando eventos com Page")
 	// Listando evento com Page e ordem crescente
 	@GetMapping
-	public Page<EventoDto> listCodigo(@RequestParam(required = false) Long codigo, 
-			 Pageable pagina)
-			throws NotFoundException {
+	public Page<EventoDto> listCodigo(@RequestParam(required = false) Long codigo, Pageable pagina) {
 		try {
 			logger.info("Eventos: " + pagina);
 			return eventoService.listPage(codigo, pagina);
@@ -70,12 +68,12 @@ public class EventoController {
 	@ApiOperation("Adicionando eventos")
 	// Adicionando eventos
 	@PostMapping
-	public ResponseEntity<EventoDto> post(@RequestBody @Valid EventoDto eventoDto) throws NotFoundException {
+	public ResponseEntity<EventoDto> post(@RequestBody @Valid EventoDto eventoDto) {
 		try {
 			EventoDto eventoDtoCreate = eventoService.createEventoDto(eventoDto);
 			logger.info("Evento cadastrado" );
 			return ResponseEntity.status(HttpStatus.CREATED).body(eventoDtoCreate);
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Evento não cadastrado");
 			logger.info("Evento não cadastrado");

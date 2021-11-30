@@ -36,11 +36,11 @@ public class UsuarioController {
 
 	// Listando usuario por LOGIN
 	@GetMapping("/{login}")
-	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) throws NotFoundException {
+	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) {
 		try {
 			logger.info("Usuario com login: " + login+ " encontrado");
 			return ResponseEntity.ok(usuarioService.getLogin(login));
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			logger.info("Usuario com login: " + login + " não encontrado");
@@ -50,8 +50,7 @@ public class UsuarioController {
 
 	// Listando usuario com Page e ordem crescente
 	@GetMapping
-	public Page<UsuarioDto> listLogin(@RequestParam(required = false) String login, Pageable pagina)
-			throws NotFoundException {
+	public Page<UsuarioDto> listLogin(@RequestParam(required = false) String login, Pageable pagina){
 		try {
 			logger.info("Usuarios: " + pagina);
 			return usuarioService.listPage(login, pagina);
@@ -65,12 +64,12 @@ public class UsuarioController {
 
 	// Adicionando usuario
 	@PostMapping
-	public ResponseEntity<UsuarioDto> post(@RequestBody @Valid UsuarioDto usuarioDto) throws NotFoundException {
+	public ResponseEntity<UsuarioDto> post(@RequestBody @Valid UsuarioDto usuarioDto) {
 		try {
 			UsuarioDto usuarioDtoCreate = usuarioService.createUsuarioDto(usuarioDto);
 			logger.info("Usuario cadastrado" );
 			return ResponseEntity.status(HttpStatus.CREATED).body(usuarioDtoCreate);
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não cadastrado/já cadastrado");
 			logger.info("Usuario não cadastrado");
@@ -81,13 +80,12 @@ public class UsuarioController {
 	// Atualizando usuario
 	@PutMapping("/{login}")
 	@Transactional
-	public ResponseEntity<UsuarioDto> put(@PathVariable String login, @RequestBody UsuarioDto usuarioDto)
-			throws NotFoundException {
+	public ResponseEntity<UsuarioDto> put(@PathVariable String login, @RequestBody UsuarioDto usuarioDto){
 		try {
 			UsuarioDto usuarioDtoUpdate = usuarioService.update(login, usuarioDto);
 			logger.info("Usuario com login: " + login + " atualizado");
 			return ResponseEntity.ok(usuarioDtoUpdate);
-		} catch (Exception ex) {
+		} catch (NotFoundException ex) {
 			ex.printStackTrace();
 			System.out.println("Usuario não encontrado");
 			logger.info("Usuario com login: " + login + " não atualizado/encontrado");
@@ -98,7 +96,7 @@ public class UsuarioController {
 	// Deletando usuario
 	@DeleteMapping("/{login}")
 	@Transactional
-	public ResponseEntity<UsuarioDto> delete(@PathVariable String login) throws NotFoundException {
+	public ResponseEntity<UsuarioDto> delete(@PathVariable String login){
 		try {
 			usuarioService.delete(login);
 			logger.info("Usuario com login: " + login + " deletado");

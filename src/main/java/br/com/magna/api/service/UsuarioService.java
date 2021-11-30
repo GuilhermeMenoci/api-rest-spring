@@ -67,7 +67,6 @@ public class UsuarioService {
 		BeanUtils.copyProperties(usuarioDto, usuarioDtoAntigo, "login");
 		UsuarioEntity convertEntity = convertEntity(usuarioDto);
 		convertEntity.setId(usuario.getId());
-
 		UsuarioEntity usuarioAtualizado = usuarioRepository.save(convertEntity);
 		return convertDto(usuarioAtualizado);
 
