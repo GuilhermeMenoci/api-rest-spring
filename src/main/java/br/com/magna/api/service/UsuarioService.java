@@ -78,7 +78,6 @@ public class UsuarioService {
 	}
 
 	
-	// CONVERSORES//
 
 	// Construtor do UsuarioDto
 	public UsuarioDto usuarioDto(UsuarioEntity usuario) {

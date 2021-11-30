@@ -24,8 +24,6 @@ public class EventoEntity implements Serializable{
 	private Long codigo;
 	private String nomeEvento;
 	private LocalDate data = LocalDate.now();
-	//private LocalDate data;
-	//private String data;
 	private String cidade;
 	
 	public EventoEntity() {}

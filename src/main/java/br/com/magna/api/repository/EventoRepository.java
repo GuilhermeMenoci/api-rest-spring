@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import br.com.magna.api.entity.EventoEntity;
@@ -15,7 +14,7 @@ import br.com.magna.api.entity.EventoEntity;
 public interface EventoRepository extends JpaRepository<EventoEntity, Long>{
 	List<EventoEntity> findByCidade(String cidade);
 	
-	@Query("SELECT e FROM EventoEntity e WHERE e.codigo = :codigo")
+	//@Query("SELECT e FROM EventoEntity e WHERE e.codigo = :codigo")
 	Optional<EventoEntity> findByCodigo(Long codigo);
 	
 	Boolean existsByCodigo(Long codigo);
@@ -23,4 +22,5 @@ public interface EventoRepository extends JpaRepository<EventoEntity, Long>{
 	String deleteByCodigo(Long codigo);
 	
 	Page<EventoEntity> findByCodigo(Long codigo, Pageable paginacao);
+	Page<EventoEntity> findAll(Pageable paginacao);
 }
