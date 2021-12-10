@@ -29,20 +29,6 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
-
-//	// Listando usuario com Page e ordem crescente
-//	@GetMapping
-//	public Page<UsuarioDto> listLogin(@RequestParam(required = false) String login, Pageable pagina){
-//		try {
-//			logger.info("Usuarios: " + pagina);
-//			return usuarioService.listPage(login, pagina);
-//		} catch (Exception ex) {
-//			ex.printStackTrace();
-//			System.out.println("Usuario não encontrado");
-//			logger.info("Eventos não encontrados");
-//			return null;
-//		}
-//	}
 	
 	@ApiOperation("Listando usuarios com Page")
 	// Listando usuario com Page e ordem crescente

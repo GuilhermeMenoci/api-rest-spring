@@ -39,8 +39,24 @@ public class EventoService {
 		}
 	}
 
+//	// Listando evento por codigo
+//	public EventoDto getCodigo(Long codigo) throws NotFoundException, Exception {
+//		try {
+//			Optional<EventoEntity> eventoOptional = eventoRepository.findByCodigo(codigo);
+//			EventoEntity evento = eventoOptional.orElseThrow(() -> new NotFoundException());
+//			EventoDto eventoDto = convertDto(evento);
+//			logger.info("Evento com código: " + codigo);
+//			return eventoDto;
+//		} catch (NotFoundException ex) {
+//			logger.error("Não existe esse evento com código: " + codigo);
+//		} catch (Exception ex) {
+//			logger.error(ex.getMessage());
+//		}
+//		return null;
+//	}
+
 	// Listando evento por codigo
-	public EventoDto getCodigo(Long codigo) throws NotFoundException, Exception {
+	public EventoDto getCodigo(int codigo) throws NotFoundException, Exception {
 		try {
 			Optional<EventoEntity> eventoOptional = eventoRepository.findByCodigo(codigo);
 			EventoEntity evento = eventoOptional.orElseThrow(() -> new NotFoundException());
@@ -86,8 +102,27 @@ public class EventoService {
 		return null;
 	}
 
+//	// Atualizando evento
+//	public EventoDto update(Long codigo, EventoDto eventoDto) throws NotFoundException, Exception {
+//		try {
+//			EventoEntity evento = eventoRepository.findByCodigo(codigo).orElseThrow(() -> new NotFoundException());
+//			EventoDto eventoDtoAntigo = convertDto(evento);
+//			BeanUtils.copyProperties(eventoDto, eventoDtoAntigo, "codigo");
+//			EventoEntity convertEntity = convertEntity(eventoDto);
+//			convertEntity.setId(evento.getId());
+//			EventoEntity eventoAtualizado = eventoRepository.save(convertEntity);
+//			logger.info("Evento com código: " + eventoDto.getCodigo() + " atualizado");
+//			return convertDto(eventoAtualizado);
+//		} catch (NotFoundException ex) {
+//			logger.error(ex.getMessage());
+//		} catch (Exception ex) {
+//			logger.error(ex.getMessage());
+//		}
+//		return null;
+//	}
+
 	// Atualizando evento
-	public EventoDto update(Long codigo, EventoDto eventoDto) throws NotFoundException, Exception {
+	public EventoDto update(int codigo, EventoDto eventoDto) throws NotFoundException, Exception {
 		try {
 			EventoEntity evento = eventoRepository.findByCodigo(codigo).orElseThrow(() -> new NotFoundException());
 			EventoDto eventoDtoAntigo = convertDto(evento);
@@ -106,14 +141,23 @@ public class EventoService {
 	}
 
 	// Deletando um evento
-	public void delete(Long codigo) throws Exception {
+	public void delete(int codigo) throws Exception {
 		try {
 			eventoRepository.deleteByCodigo(codigo);
 			logger.info("Evento com código: " + codigo + " deletado");
 		} catch (Exception ex) {
 			logger.error(ex.getMessage());
-		}
+		} 
 	}
+//	// Deletando um evento
+//	public void delete(Long codigo) throws Exception {
+//		try {
+//			eventoRepository.deleteByCodigo(codigo);
+//			logger.info("Evento com código: " + codigo + " deletado");
+//		} catch (Exception ex) {
+//			logger.error(ex.getMessage());
+//		}
+//	}
 
 	// Construtor do EventoDto
 	public EventoDto eventoDto(EventoEntity evento) {

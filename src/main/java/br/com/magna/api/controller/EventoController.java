@@ -44,10 +44,23 @@ public class EventoController {
 		return null;
 	}
 	
+//	@ApiOperation("Listando eventos com codigo")
+//	// Listando eventos por CODIGO
+//	@GetMapping("/{codigo}")
+//	public ResponseEntity<EventoDto> listCodigo(@PathVariable Long codigo) {
+//		try {
+//			return ResponseEntity.ok(eventoService.getCodigo(codigo));
+//		} catch (NotFoundException ex) {
+//			ex.getMessage();
+//			return ResponseEntity.notFound().build();
+//		} catch (Exception ex) {
+//			return ResponseEntity.badRequest().build();
+//		}
+//	}
 	@ApiOperation("Listando eventos com codigo")
 	// Listando eventos por CODIGO
 	@GetMapping("/{codigo}")
-	public ResponseEntity<EventoDto> listCodigo(@PathVariable Long codigo) {
+	public ResponseEntity<EventoDto> listCodigo(@PathVariable int codigo) {
 		try {
 			return ResponseEntity.ok(eventoService.getCodigo(codigo));
 		} catch (NotFoundException ex) {
@@ -74,11 +87,30 @@ public class EventoController {
 		}
 	}
 
+//	@ApiOperation("Atualizando eventos")
+//	// Atualizando evento
+//	@PutMapping("/{codigo}")
+//	@Transactional
+//	public ResponseEntity<EventoDto> updateEvento(@PathVariable Long codigo, @RequestBody EventoDto eventoDto){
+//		try {
+//			EventoDto eventoDtoUpdate = eventoService.update(codigo, eventoDto);
+//			return ResponseEntity.ok(eventoDtoUpdate);
+//		} catch (NotFoundException ex) {
+//			ex.getMessage();
+//			return ResponseEntity.notFound().build();
+//		} catch(EntityNotFoundException ex) {
+//			//ex.getMessage();
+//			return ResponseEntity.badRequest().build();
+//		} catch (Exception ex) {
+//			ex.getMessage();
+//			return ResponseEntity.badRequest().build();
+//		}
+//	}
 	@ApiOperation("Atualizando eventos")
 	// Atualizando evento
 	@PutMapping("/{codigo}")
 	@Transactional
-	public ResponseEntity<EventoDto> updateEvento(@PathVariable Long codigo, @RequestBody EventoDto eventoDto){
+	public ResponseEntity<EventoDto> updateEvento(@PathVariable int codigo, @RequestBody EventoDto eventoDto){
 		try {
 			EventoDto eventoDtoUpdate = eventoService.update(codigo, eventoDto);
 			return ResponseEntity.ok(eventoDtoUpdate);
@@ -94,11 +126,24 @@ public class EventoController {
 		}
 	}
 
+//	@ApiOperation("Deletando eventos")
+//	// Deletando evento
+//	@DeleteMapping("/{codigo}")
+//	@Transactional
+//	public ResponseEntity<EventoDto> deleteEvento(@PathVariable Long codigo) {
+//		try {
+//			eventoService.delete(codigo);
+//			return ResponseEntity.ok().build();
+//		} catch (Exception ex) {
+//			ex.getMessage();
+//			return ResponseEntity.notFound().build();
+//		}
+//	}
 	@ApiOperation("Deletando eventos")
 	// Deletando evento
 	@DeleteMapping("/{codigo}")
 	@Transactional
-	public ResponseEntity<EventoDto> deleteEvento(@PathVariable Long codigo) {
+	public ResponseEntity<EventoDto> deleteEvento(@PathVariable int codigo) {
 		try {
 			eventoService.delete(codigo);
 			return ResponseEntity.ok().build();

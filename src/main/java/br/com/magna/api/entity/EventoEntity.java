@@ -21,25 +21,39 @@ public class EventoEntity implements Serializable{
 	
 	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	private Long codigo;
+	private int codigo;
+	//private Long codigo;
 	private String nomeEvento;
 	private LocalDate data = LocalDate.now();
 	private String cidade;
 	
 	public EventoEntity() {}
 	
-	public EventoEntity(Long id, Long codigo, String nomeEvento, String cidade) {
+//	public EventoEntity(Long id, Long codigo, String nomeEvento, String cidade) {
+//		this.id = id;
+//		this.codigo = codigo;
+//		this.nomeEvento = nomeEvento;
+//		this.cidade = cidade;
+//	}
+	
+	public EventoEntity(Long id, int codigo, String nomeEvento, String cidade) {
 		this.id = id;
 		this.codigo = codigo;
 		this.nomeEvento = nomeEvento;
 		this.cidade = cidade;
 	}
 
-	public Long getCodigo() {
+//	public Long getCodigo() {
+//		return codigo;
+//	}
+	public int getCodigo() {
 		return codigo;
 	}
-
-	public void setCodigo(Long codigo) {
+	
+//	public void setCodigo(Long codigo) {
+//		this.codigo = codigo;
+//	}
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 

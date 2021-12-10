@@ -7,13 +7,13 @@ import java.util.Objects;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
-//Dto - Dados que vou enviar/mostrar para o client
 public class EventoDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
-	private Long codigo;
+	private int codigo;
+	//private Long codigo;
 	@NotNull
 	@NotEmpty
 	private String nomeEvento;
@@ -24,14 +24,22 @@ public class EventoDto implements Serializable {
 
 	public EventoDto() {
 	}
-
-	public Long getCodigo() {
+	
+//	public Long getCodigo() {
+//		return codigo;
+//	}
+	
+	public int getCodigo() {
 		return codigo;
 	}
-
-	public void setCodigo(Long codigo) {
+	
+	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
+
+//	public void setCodigo(Long codigo) {
+//		this.codigo = codigo;
+//	}
 
 	public void setNomeEvento(String nomeEvento) {
 		this.nomeEvento = nomeEvento;
@@ -52,8 +60,6 @@ public class EventoDto implements Serializable {
 	public String getNomeEvento() {
 		return nomeEvento;
 	}
-
-	
 
 	public String getCidade() {
 		return cidade;

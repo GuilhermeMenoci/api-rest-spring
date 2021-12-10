@@ -29,17 +29,6 @@ public class UsuarioService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-//	// Listando todos os eventos com Page(pagina e quantidade)
-//	public Page<UsuarioDto> listPage(String login, Pageable paginacao) {
-//		if (login == null) {
-//			Page<UsuarioEntity> usuarios = usuarioRepository.findAll(paginacao);
-//			return pageDto(usuarios);
-//		} else {
-//			Page<UsuarioEntity> usuarios = usuarioRepository.findByLogin(login, paginacao);
-//			return pageDto(usuarios);
-//		}
-//	}
-
 	// Listando todos os eventos com Page(pagina e quantidade)
 	public Page<UsuarioDto> listPage(Pageable paginacao) throws Exception {
 		try {

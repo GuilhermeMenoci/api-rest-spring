@@ -84,7 +84,7 @@ public class ConvidadoService {
 
 	// Criando convidado
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) throws IllegalArgumentException,
-	NotFoundException,  NotFoundException {
+	NotFoundException {
 		try {
 			if (verificaConvidado(convidadoDto)) {
 				logger.info("Convidado já cadastrado");
