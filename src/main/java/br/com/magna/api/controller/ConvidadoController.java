@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +34,7 @@ public class ConvidadoController {
 	@ApiOperation("Listando convidados com Page")
 	// Listando convidados com Page e ordem crescente
 	@GetMapping
+	@Cacheable(value = "listaDeConvidados")
 	public Page<ConvidadoDto> listAllConvidados(Pageable pagina) {
 		try {
 			return convidadoService.listPage(pagina);
@@ -47,6 +49,7 @@ public class ConvidadoController {
 	@ApiOperation("Listando convidados com cpf")
 	// Listando convidados por CPF
 	@GetMapping("/{cpf}")
+	@Cacheable(value = "listandoPorCpf")
 	public ResponseEntity<ConvidadoDto> listCpf(@PathVariable String cpf) {
 		try {
 			return ResponseEntity.ok(convidadoService.getCpf(cpf));

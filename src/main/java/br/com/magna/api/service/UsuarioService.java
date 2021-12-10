@@ -34,7 +34,8 @@ public class UsuarioService {
 		try {
 			Page<UsuarioEntity> usuarios = usuarioRepository.findAll(paginacao);
 			logger.info("Usuarios listados");
-			return pageDto(usuarios);
+			return usuarios.map(map -> modelMapper.map(map, UsuarioDto.class));
+			//return pageDto(usuarios);
 		} catch (Exception ex) {
 			logger.error(ex.getMessage());
 			return null;

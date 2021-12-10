@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +34,7 @@ public class UsuarioController {
 	@ApiOperation("Listando usuarios com Page")
 	// Listando usuario com Page e ordem crescente
 	@GetMapping
+	@Cacheable(value = "listaDeUsers")
 	public Page<UsuarioDto> listAllUser(Pageable pagina) {
 		try {
 			return usuarioService.listPage(pagina);
@@ -47,6 +49,7 @@ public class UsuarioController {
 	@ApiOperation("Listando usuarios com login")
 	// Listando usuario por LOGIN
 	@GetMapping("/{login}")
+	@Cacheable(value = "listaPorLogin")
 	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) {
 		try {
 			return ResponseEntity.ok(usuarioService.getLogin(login));

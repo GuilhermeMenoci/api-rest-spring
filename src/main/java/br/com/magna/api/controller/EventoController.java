@@ -5,6 +5,7 @@ import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +34,7 @@ public class EventoController {
 	@ApiOperation("Listando eventos com Page")
 	// Listando evento com Page e ordem crescente
 	@GetMapping
+	@Cacheable(value = "listaDeEventos")
 	public Page<EventoDto> listAllEventos(Pageable pagina) {
 		try {
 			return eventoService.listPage(pagina);
@@ -60,6 +62,7 @@ public class EventoController {
 	@ApiOperation("Listando eventos com codigo")
 	// Listando eventos por CODIGO
 	@GetMapping("/{codigo}")
+	@Cacheable(value = "listaPorCodigo")
 	public ResponseEntity<EventoDto> listCodigo(@PathVariable int codigo) {
 		try {
 			return ResponseEntity.ok(eventoService.getCodigo(codigo));
