@@ -12,30 +12,24 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
+@JsonIgnoreProperties({ "hibernateLazyInitializer", "handler" })
 @Entity
-@Table(name = "evento")
-public class EventoEntity implements Serializable{
+@Table(name = "evento", schema = "eventos")
+public class EventoEntity implements Serializable {
 
 	private static final long serialVersionUID = 1L;
-	
-	@Id @GeneratedValue(strategy = GenerationType.IDENTITY)
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private int codigo;
-	//private Long codigo;
 	private String nomeEvento;
 	private LocalDate data = LocalDate.now();
 	private String cidade;
-	
-	public EventoEntity() {}
-	
-//	public EventoEntity(Long id, Long codigo, String nomeEvento, String cidade) {
-//		this.id = id;
-//		this.codigo = codigo;
-//		this.nomeEvento = nomeEvento;
-//		this.cidade = cidade;
-//	}
-	
+
+	public EventoEntity() {
+	}
+
 	public EventoEntity(Long id, int codigo, String nomeEvento, String cidade) {
 		this.id = id;
 		this.codigo = codigo;
@@ -43,16 +37,10 @@ public class EventoEntity implements Serializable{
 		this.cidade = cidade;
 	}
 
-//	public Long getCodigo() {
-//		return codigo;
-//	}
 	public int getCodigo() {
 		return codigo;
 	}
-	
-//	public void setCodigo(Long codigo) {
-//		this.codigo = codigo;
-//	}
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
@@ -64,10 +52,11 @@ public class EventoEntity implements Serializable{
 	public void setNomeEvento(String nomeEvento) {
 		this.nomeEvento = nomeEvento;
 	}
-	
+
 	public LocalDate getData() {
 		return data;
 	}
+
 	public void setData(LocalDate data) {
 		this.data = data;
 	}
@@ -83,8 +72,6 @@ public class EventoEntity implements Serializable{
 	public String getNomeEvento() {
 		return nomeEvento;
 	}
-
-	
 
 	public String getCidade() {
 		return cidade;
