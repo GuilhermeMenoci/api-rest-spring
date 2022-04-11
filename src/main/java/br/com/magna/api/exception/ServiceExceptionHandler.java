@@ -73,6 +73,20 @@ public class ServiceExceptionHandler extends ResponseEntityExceptionHandler {
 		return handleExceptionInternal(e, bodyExceptionResponse, header, BAD_REQUEST, request);
 	}
 	
+	@ExceptionHandler(Exception.class)
+	public ResponseEntity<Object> handleUncaughtException(Exception e, ServletWebRequest request) {
+
+		logger.info(e.getMessage());
+
+		ExceptionResponseDTO bodyExceptionResponse = criarExceptionResponseDTO(TITLE_ERRO_SERVIDOR, TYPE_ERRO_INESPERADO,
+				Arrays.asList(e.getMessage()), request.getRequest().getRequestURI());
+
+		HttpHeaders header = new HttpHeaders();
+		header.add(HEADER_MESSAGE, e.getMessage());
+
+		return handleExceptionInternal(e, bodyExceptionResponse, header, INTERNAL_SERVER_ERROR, request);
+	}
+	
 	private ExceptionResponseDTO criarExceptionResponseDTO(String title, String type, List<String> detail,
 			String instance) {
 		ExceptionResponseDTO exception = new ExceptionResponseDTO();

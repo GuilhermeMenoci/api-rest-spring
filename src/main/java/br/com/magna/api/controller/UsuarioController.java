@@ -1,12 +1,10 @@
 package br.com.magna.api.controller;
 
-import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -30,20 +28,15 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioService usuarioService;
-	
+
 	@ApiOperation("Listando usuarios com Page")
 	// Listando usuario com Page e ordem crescente
 	@GetMapping
 	@Cacheable(value = "listaDeUsers")
 	public Page<UsuarioDto> listAllUser(Pageable pagina) {
-		try {
-			return usuarioService.listPage(pagina);
-		} catch (NotFoundException ex) {
-			ex.getMessage();
-		} catch(Exception ex) {
-			ex.getMessage();
-		}
-		return null;
+
+		return usuarioService.listPage(pagina);
+
 	}
 
 	@ApiOperation("Listando usuarios com login")
@@ -51,48 +44,30 @@ public class UsuarioController {
 	@GetMapping("/{login}")
 	@Cacheable(value = "listaPorLogin")
 	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) {
-		try {
-			return ResponseEntity.ok(usuarioService.getLogin(login));
-		} catch (NotFoundException ex) {
-		//	ex.getMessage();
-			return ResponseEntity.notFound().build();
-		} catch(Exception ex) {
-			return ResponseEntity.badRequest().build();
-		}
+
+		return ResponseEntity.ok(usuarioService.getLogin(login));
+
 	}
 
 	@ApiOperation("Adicionando usuarios")
 	// Adicionando usuario
 	@PostMapping
 	public ResponseEntity<UsuarioDto> createUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
-		try {
-			UsuarioDto usuarioDtoCreate = usuarioService.createUsuarioDto(usuarioDto);
-			return ResponseEntity.status(HttpStatus.CREATED).body(usuarioDtoCreate);
-		} catch (IllegalArgumentException ex) {
-			ex.getMessage();
-			return ResponseEntity.noContent().build();
-		} catch(Exception ex) {
-			ex.getMessage();
-			return ResponseEntity.badRequest().build();
-		}
+
+		UsuarioDto usuarioDtoCreate = usuarioService.createUsuarioDto(usuarioDto);
+		return ResponseEntity.status(HttpStatus.CREATED).body(usuarioDtoCreate);
+
 	}
 
 	@ApiOperation("Atualizando usuario")
 	// Atualizando usuario
 	@PutMapping("/{login}")
 	@Transactional
-	public ResponseEntity<UsuarioDto> updateUsuario(@PathVariable String login, 
-			@RequestBody UsuarioDto usuarioDto) {
-		try {
-			UsuarioDto usuarioDtoUpdate = usuarioService.update(login, usuarioDto);	
-			return ResponseEntity.ok(usuarioDtoUpdate);
-		} catch (NotFoundException ex) {
-			return ResponseEntity.notFound().build();	
-		} catch(EntityNotFoundException ex) {
-			return ResponseEntity.notFound().build();
-		} catch(Exception ex) {
-			return ResponseEntity.badRequest().build();
-		}
+	public ResponseEntity<UsuarioDto> updateUsuario(@PathVariable String login, @RequestBody UsuarioDto usuarioDto) {
+
+		UsuarioDto usuarioDtoUpdate = usuarioService.update(login, usuarioDto);
+		return ResponseEntity.ok(usuarioDtoUpdate);
+
 	}
 
 	@ApiOperation("Deletando usuario")
@@ -100,15 +75,9 @@ public class UsuarioController {
 	@DeleteMapping("/{login}")
 	@Transactional
 	public ResponseEntity<UsuarioDto> deleteUsuario(@PathVariable String login) {
-		try {
-			usuarioService.delete(login);
-			return ResponseEntity.ok().build();
-		} catch (NotFoundException ex) {
-			return ResponseEntity.notFound().build();
-		} catch(Exception ex){
-			//ex.getMessage();
-			return ResponseEntity.badRequest().build();
-		}
+
+		usuarioService.delete(login);
+		return ResponseEntity.ok().build();
 	}
 
 }
