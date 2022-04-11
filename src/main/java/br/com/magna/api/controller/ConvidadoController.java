@@ -1,12 +1,10 @@
 package br.com.magna.api.controller;
 
-import javax.persistence.EntityNotFoundException;
 import javax.transaction.Transactional;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.data.crossstore.ChangeSetPersister.NotFoundException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
@@ -27,7 +25,7 @@ import io.swagger.annotations.ApiOperation;
 @RestController
 @RequestMapping("/convidados")
 public class ConvidadoController {
-	
+
 	@Autowired
 	private ConvidadoService convidadoService;
 
@@ -36,14 +34,9 @@ public class ConvidadoController {
 	@GetMapping
 	@Cacheable(value = "listaDeConvidados")
 	public Page<ConvidadoDto> listAllConvidados(Pageable pagina) {
-		try {
-			return convidadoService.listPage(pagina);
-		} catch (NotFoundException ex) {
-			ex.getMessage();
-		} catch(Exception ex) {
-			ex.getMessage();
-		}
-		return null;
+
+		return convidadoService.listPage(pagina);
+
 	}
 
 	@ApiOperation("Listando convidados com cpf")
@@ -51,13 +44,9 @@ public class ConvidadoController {
 	@GetMapping("/{cpf}")
 	@Cacheable(value = "listandoPorCpf")
 	public ResponseEntity<ConvidadoDto> listCpf(@PathVariable String cpf) {
-		try {
-			return ResponseEntity.ok(convidadoService.getCpf(cpf));
-		} catch (NotFoundException ex) {
-			return ResponseEntity.notFound().build();
-		} catch(Exception ex) {
-			return ResponseEntity.badRequest().build();
-		}
+
+		return ResponseEntity.ok(convidadoService.getCpf(cpf));
+
 	}
 
 	@ApiOperation("Adicionando convidado")
@@ -65,33 +54,21 @@ public class ConvidadoController {
 	@PostMapping
 	@Transactional
 	public ResponseEntity<ConvidadoDto> post(@RequestBody @Valid ConvidadoDto convidadoDto) {
-		try {
-			ConvidadoDto convidadoDtoCreate = convidadoService.createConvidadoDto(convidadoDto);
-			return ResponseEntity.status(HttpStatus.CREATED).body(convidadoDtoCreate);
-		} catch (NotFoundException ex) {
-			return ResponseEntity.notFound().build();
-		} catch (IllegalArgumentException ex) {
-			return ResponseEntity.noContent().build();
-		} catch (Exception ex) {
-			return ResponseEntity.badRequest().build();
-		}
+
+		ConvidadoDto convidadoDtoCreate = convidadoService.createConvidadoDto(convidadoDto);
+		return ResponseEntity.status(HttpStatus.CREATED).body(convidadoDtoCreate);
+
 	}
 
 	@ApiOperation("Atualizando convidado")
 	// Atualizando convidado
 	@PutMapping("/{cpf}")
 	@Transactional
-	public ResponseEntity<ConvidadoDto> put(@PathVariable String cpf, @RequestBody ConvidadoDto convidadoDto){
-		try {
-			ConvidadoDto convidadoDtoUpdate = convidadoService.update(cpf, convidadoDto);
-			return ResponseEntity.ok(convidadoDtoUpdate);
-		} catch (NotFoundException ex) {
-			return ResponseEntity.notFound().build();
-		} catch(EntityNotFoundException ex) {
-			return ResponseEntity.notFound().build();
-		} catch(Exception ex) {
-			return ResponseEntity.badRequest().build();
-		}
+	public ResponseEntity<ConvidadoDto> put(@PathVariable String cpf, @RequestBody ConvidadoDto convidadoDto) {
+
+		ConvidadoDto convidadoDtoUpdate = convidadoService.update(cpf, convidadoDto);
+		return ResponseEntity.ok(convidadoDtoUpdate);
+
 	}
 
 	@ApiOperation("Deletando convidado")
@@ -99,15 +76,10 @@ public class ConvidadoController {
 	@DeleteMapping("/{cpf}")
 	@Transactional
 	public ResponseEntity<ConvidadoDto> delete(@PathVariable String cpf) {
-		try {
-			convidadoService.delete(cpf);
-			return ResponseEntity.ok().build();
-		} catch (NotFoundException ex) {
-			return ResponseEntity.notFound().build();
-		} catch(Exception ex){
-			//ex.getMessage();
-			return ResponseEntity.badRequest().build();
-		}
+
+		convidadoService.delete(cpf);
+		return ResponseEntity.ok().build();
+
 	}
 
 }
