@@ -7,16 +7,19 @@ import java.util.Objects;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class EventoDto implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@NotNull
 	private int codigo;
-	//private Long codigo;
+
 	@NotNull
 	@NotEmpty
 	private String nomeEvento;
+	@JsonProperty()
 	private LocalDate data = LocalDate.now();
 	@NotNull
 	@NotEmpty
@@ -24,33 +27,25 @@ public class EventoDto implements Serializable {
 
 	public EventoDto() {
 	}
-	
-//	public Long getCodigo() {
-//		return codigo;
-//	}
-	
+
 	public int getCodigo() {
 		return codigo;
 	}
-	
+
 	public void setCodigo(int codigo) {
 		this.codigo = codigo;
 	}
 
-//	public void setCodigo(Long codigo) {
-//		this.codigo = codigo;
-//	}
-
 	public void setNomeEvento(String nomeEvento) {
 		this.nomeEvento = nomeEvento;
 	}
-	
+
 	public LocalDate getData() {
 		return data;
 	}
-	
+
 	public void setData(LocalDate data) {
-		this.data = data;	
+		this.data = data;
 	}
 
 	public void setCidade(String cidade) {
@@ -88,7 +83,5 @@ public class EventoDto implements Serializable {
 		return Objects.equals(cidade, other.cidade) && Objects.equals(codigo, other.codigo)
 				&& Objects.equals(data, other.data) && Objects.equals(nomeEvento, other.nomeEvento);
 	}
-
-	
 
 }
