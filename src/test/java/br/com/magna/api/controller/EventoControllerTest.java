@@ -17,7 +17,7 @@ import org.springframework.http.ResponseEntity;
 import br.com.magna.api.dto.EventoDto;
 
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
-public class EventoTeste {
+class EventoControllerTest {
 
 	private static final String PORT = "8091";
 	private static final String URL = "http://localhost:" + PORT + "/eventos";
@@ -37,7 +37,7 @@ public class EventoTeste {
 	}
 	
 	@Test //POST
-	public void verificaSeEstaCadastrandoEventoNoBancoDados() throws URISyntaxException  {
+	void verificaSeEstaCadastrandoEventoNoBancoDados() throws URISyntaxException  {
 		EventoDto eventoDto = new EventoDto();
 		eventoDto.setCodigo(200);
 		eventoDto.setNomeEvento("Teste 2 com JUnit");
@@ -49,7 +49,7 @@ public class EventoTeste {
 	
 	
 	@Test //DELETE
-	public void verificaSeEstaDeletandoEventoNoBancoDados() {
+	void verificaSeEstaDeletandoEventoNoBancoDados() {
 		ParameterizedTypeReference<EventoDto> responseType = 
 				new ParameterizedTypeReference<EventoDto>() {
 		};
@@ -59,7 +59,7 @@ public class EventoTeste {
 	}
 
 	@Test  //PUT
-	public void verificaSeEstaAtualizandoEventoNoBancoDadoso() {
+	void verificaSeEstaAtualizandoEventoNoBancoDadoso() {
 		EventoDto eventoDto = new EventoDto();
 		eventoDto.setCodigo(200);
 		eventoDto.setNomeEvento("Teste 2 com JUnit PUT");

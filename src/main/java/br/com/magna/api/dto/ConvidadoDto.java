@@ -8,18 +8,17 @@ import javax.validation.constraints.NotNull;
 
 import br.com.magna.api.entity.EventoEntity;
 
-public class ConvidadoDto implements Serializable{
-	
+public class ConvidadoDto implements Serializable {
+
 	private static final long serialVersionUID = 1L;
-	
-	@NotNull @NotEmpty
+
+	@NotNull
+	@NotEmpty
 	private String cpf;
-	@NotNull @NotEmpty
+	@NotNull
+	@NotEmpty
 	private String nome;
 	private EventoEntity evento;
-	
-	public ConvidadoDto() {
-	}
 
 	public String getCpf() {
 		return cpf;
@@ -44,7 +43,7 @@ public class ConvidadoDto implements Serializable{
 	public void setEvento(EventoEntity evento) {
 		this.evento = evento;
 	}
-	
+
 	@Override
 	public String toString() {
 		return "ConvidadoDto [cpf=" + cpf + ", nome=" + nome + ", evento=" + evento + "]";
@@ -67,8 +66,5 @@ public class ConvidadoDto implements Serializable{
 		return Objects.equals(cpf, other.cpf) && Objects.equals(evento, other.evento)
 				&& Objects.equals(nome, other.nome);
 	}
-	
-	
-	
-	
+
 }

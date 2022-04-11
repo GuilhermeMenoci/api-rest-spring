@@ -25,9 +25,6 @@ public class EventoDto implements Serializable {
 	@NotEmpty
 	private String cidade;
 
-	public EventoDto() {
-	}
-
 	public int getCodigo() {
 		return codigo;
 	}

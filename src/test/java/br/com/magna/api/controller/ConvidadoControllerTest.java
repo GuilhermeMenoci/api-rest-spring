@@ -1,5 +1,5 @@
 package br.com.magna.api.controller;
 
-public class UsuarioTeste {
+public class ConvidadoControllerTest {
 
 }

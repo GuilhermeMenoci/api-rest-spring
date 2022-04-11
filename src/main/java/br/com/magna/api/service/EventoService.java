@@ -49,7 +49,7 @@ public class EventoService {
 	public Boolean verificaEvento(EventoDto codigoEvento) {
 		Boolean verificaEvento = false;
 
-		if (eventoRepository.existsByCodigo(codigoEvento.getCodigo())) {
+		if (Boolean.TRUE.equals(eventoRepository.existsByCodigo(codigoEvento.getCodigo()))) {
 			logger.error("Evento já cadastrado com esse codigo: {}", codigoEvento.getCodigo());
 			throw new DadosJaCadastradosException("Evento já cadastrado com esse codigo:" + codigoEvento.getCodigo());
 		}
@@ -114,7 +114,7 @@ public class EventoService {
 
 	// Conversor Page de Entity para Dto
 	public Page<EventoDto> pageDto(Page<EventoEntity> eventoEntity) {
-		return eventoEntity.map(convert -> this.eventoDto(convert));
+		return eventoEntity.map(this::eventoDto);
 	}
 
 }

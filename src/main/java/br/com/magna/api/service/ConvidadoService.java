@@ -125,7 +125,7 @@ public class ConvidadoService {
 
 	// Conversor Page de Entity para Dto
 	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidadoEntity) {
-		return convidadoEntity.map(convert -> this.convidadoDto(convert));
+		return convidadoEntity.map(this::convidadoDto);
 	}
 
 }

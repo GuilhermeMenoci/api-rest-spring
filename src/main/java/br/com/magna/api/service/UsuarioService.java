@@ -40,8 +40,7 @@ public class UsuarioService {
 
 		UsuarioEntity usuarioOptional = usuarioRepository.findByLogin(login)
 				.orElseThrow(() -> new NaoEncontradoException("Nenhum usuario encontrado com login: " + login));
-		UsuarioDto usuarioDto = convertDto(usuarioOptional);
-		return usuarioDto;
+		return convertDto(usuarioOptional);
 
 	}
 
@@ -115,7 +114,7 @@ public class UsuarioService {
 
 	// Conversor Page de Entity para Dto
 	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuarioEntity) {
-		return usuarioEntity.map(convert -> this.usuarioDto(convert));
+		return usuarioEntity.map(this::usuarioDto);
 	}
 
 }
