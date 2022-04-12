@@ -13,7 +13,6 @@ import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
 import org.springframework.core.ParameterizedTypeReference;
-import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -30,7 +29,7 @@ import br.com.magna.api.entity.EventoEntity;
 class EventoControllerTest extends AbstractControllerIT {
 
 	private static final String CONSULTA_EVENTO = "/eventos/";
-	private static final String IDCOMPLETO = "1";
+
 	private static final Long ERROR = 1111111L;
 
 	private static StringBuilder path = new StringBuilder(URL);
@@ -66,10 +65,6 @@ class EventoControllerTest extends AbstractControllerIT {
 
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
-
-		Pageable pg = Pageable.ofSize(1);
-
-		EventoEntity entity = eventoRepository.findAll(pg).stream().findFirst().get();
 
 		ParameterizedTypeReference<EventoDto> responseType = new ParameterizedTypeReference<>() {
 		};
@@ -154,10 +149,11 @@ class EventoControllerTest extends AbstractControllerIT {
 		ParameterizedTypeReference<EventoDto> responseType = new ParameterizedTypeReference<EventoDto>() {
 		};
 
-		ResponseEntity<EventoDto> response = restTemplate.exchange(path.toString(), HttpMethod.DELETE, null, responseType);
+		ResponseEntity<EventoDto> response = restTemplate.exchange(path.toString(), HttpMethod.DELETE, null,
+				responseType);
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
-	
+
 	private EventoDto alterarVO() {
 
 		EventoDto vo = new EventoDto();

@@ -30,7 +30,6 @@ public class UsuarioController {
 	private UsuarioService usuarioService;
 
 	@ApiOperation("Listando usuarios com Page")
-	// Listando usuario com Page e ordem crescente
 	@GetMapping
 	@Cacheable(value = "listaDeUsers")
 	public Page<UsuarioDto> listAllUser(Pageable pagina) {
@@ -40,7 +39,6 @@ public class UsuarioController {
 	}
 
 	@ApiOperation("Listando usuarios com login")
-	// Listando usuario por LOGIN
 	@GetMapping("/{login}")
 	@Cacheable(value = "listaPorLogin")
 	public ResponseEntity<UsuarioDto> listLogin(@PathVariable String login) {
@@ -50,7 +48,6 @@ public class UsuarioController {
 	}
 
 	@ApiOperation("Adicionando usuarios")
-	// Adicionando usuario
 	@PostMapping
 	public ResponseEntity<UsuarioDto> createUsuario(@RequestBody @Valid UsuarioDto usuarioDto) {
 
@@ -60,7 +57,6 @@ public class UsuarioController {
 	}
 
 	@ApiOperation("Atualizando usuario")
-	// Atualizando usuario
 	@PutMapping("/{login}")
 	@Transactional
 	public ResponseEntity<UsuarioDto> updateUsuario(@PathVariable String login, @RequestBody UsuarioDto usuarioDto) {
@@ -71,7 +67,6 @@ public class UsuarioController {
 	}
 
 	@ApiOperation("Deletando usuario")
-	// Deletando usuario
 	@DeleteMapping("/{login}")
 	@Transactional
 	public ResponseEntity<UsuarioDto> deleteUsuario(@PathVariable String login) {
