@@ -30,7 +30,6 @@ public class ConvidadoController {
 	private ConvidadoService convidadoService;
 
 	@ApiOperation("Listando convidados com Page")
-	// Listando convidados com Page e ordem crescente
 	@GetMapping
 	@Cacheable(value = "listaDeConvidados")
 	public Page<ConvidadoDto> listAllConvidados(Pageable pagina) {
@@ -40,7 +39,6 @@ public class ConvidadoController {
 	}
 
 	@ApiOperation("Listando convidados com cpf")
-	// Listando convidados por CPF
 	@GetMapping("/{cpf}")
 	@Cacheable(value = "listandoPorCpf")
 	public ResponseEntity<ConvidadoDto> listCpf(@PathVariable String cpf) {
@@ -50,7 +48,6 @@ public class ConvidadoController {
 	}
 
 	@ApiOperation("Adicionando convidado")
-	// Adicionando convidados
 	@PostMapping
 	@Transactional
 	public ResponseEntity<ConvidadoDto> post(@RequestBody @Valid ConvidadoDto convidadoDto) {
@@ -61,7 +58,6 @@ public class ConvidadoController {
 	}
 
 	@ApiOperation("Atualizando convidado")
-	// Atualizando convidado
 	@PutMapping("/{cpf}")
 	@Transactional
 	public ResponseEntity<ConvidadoDto> put(@PathVariable String cpf, @RequestBody ConvidadoDto convidadoDto) {
@@ -72,7 +68,6 @@ public class ConvidadoController {
 	}
 
 	@ApiOperation("Deletando convidado")
-	// Deletando convidados
 	@DeleteMapping("/{cpf}")
 	@Transactional
 	public ResponseEntity<ConvidadoDto> delete(@PathVariable String cpf) {

@@ -25,14 +25,14 @@ import br.com.magna.api.entity.UsuarioEntity;
 
 @SpringBootTest(webEnvironment = WebEnvironment.DEFINED_PORT)
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
-class UsuarioControllerTest extends AbstractControllerIT{
+class UsuarioControllerTest extends AbstractControllerIT {
 
 	private static final String USUARIO = "/usuarios/";
 
 	private static final String ERROR = "invalido";
 
 	private static StringBuilder path = new StringBuilder(URL);
-	
+
 	@Test
 	@Order(1)
 	void salvarUsuario() {
@@ -55,7 +55,7 @@ class UsuarioControllerTest extends AbstractControllerIT{
 		assertEquals(HttpStatus.CREATED, response.getStatusCode());
 		assertEquals(usuarioEntity.getLogin(), usuario.getLogin());
 	}
-	
+
 	@Test
 	@Order(2)
 	void esperaAlterarUsuario() {
@@ -77,7 +77,7 @@ class UsuarioControllerTest extends AbstractControllerIT{
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 
 	}
-	
+
 	@Test
 	@Order(3)
 	void esperaEncontrarUsuarioPorLogin() {
@@ -86,13 +86,14 @@ class UsuarioControllerTest extends AbstractControllerIT{
 		ParameterizedTypeReference<UsuarioDto> responseType = new ParameterizedTypeReference<UsuarioDto>() {
 		};
 
-		ResponseEntity<UsuarioDto> response = restTemplate.exchange(path.toString(), HttpMethod.GET, null, responseType);
+		ResponseEntity<UsuarioDto> response = restTemplate.exchange(path.toString(), HttpMethod.GET, null,
+				responseType);
 
 		UsuarioEntity entity = usuarioRepository.findByLogin("teste").get();
 		assertEquals(response.getBody().getLogin(), entity.getLogin());
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
-	
+
 	@Test
 	@Order(4)
 	void esperaNaoAlterarUsuario() {
@@ -113,7 +114,7 @@ class UsuarioControllerTest extends AbstractControllerIT{
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 
 	}
-	
+
 	@Test
 	@Order(5)
 	void esperaNaoEncontrarUsuarioPorLogin() {
@@ -122,11 +123,12 @@ class UsuarioControllerTest extends AbstractControllerIT{
 		ParameterizedTypeReference<UsuarioDto> responseType = new ParameterizedTypeReference<UsuarioDto>() {
 		};
 
-		ResponseEntity<UsuarioDto> response = restTemplate.exchange(path.toString(), HttpMethod.GET, null, responseType);
+		ResponseEntity<UsuarioDto> response = restTemplate.exchange(path.toString(), HttpMethod.GET, null,
+				responseType);
 
 		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
 	}
-	
+
 	@Test
 	@Order(6)
 	void esperaEncontrarTodosUsuarios() {
@@ -140,7 +142,7 @@ class UsuarioControllerTest extends AbstractControllerIT{
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 
 	}
-	
+
 	@Test
 	@Order(7)
 	void esperaDeletarUsuarioPorLogin() {
@@ -153,7 +155,7 @@ class UsuarioControllerTest extends AbstractControllerIT{
 				responseType);
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
-	
+
 	private UsuarioDto gerarVO() {
 
 		UsuarioDto vo = new UsuarioDto();
@@ -166,7 +168,7 @@ class UsuarioControllerTest extends AbstractControllerIT{
 		return vo;
 
 	}
-	
+
 	@BeforeEach
 	void inicializar() {
 		path.append(USUARIO);
@@ -176,5 +178,5 @@ class UsuarioControllerTest extends AbstractControllerIT{
 	void finalizar() {
 		path = new StringBuilder(URL);
 	}
-	
+
 }
