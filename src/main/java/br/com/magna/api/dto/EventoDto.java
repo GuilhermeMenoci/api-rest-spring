@@ -2,7 +2,6 @@ package br.com.magna.api.dto;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Objects;
 
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
@@ -55,30 +54,6 @@ public class EventoDto implements Serializable {
 
 	public String getCidade() {
 		return cidade;
-	}
-
-	@Override
-	public String toString() {
-		return "EventoDto [codigo=" + codigo + ", nomeEvento=" + nomeEvento + ", data=" + data + ", cidade=" + cidade
-				+ "]";
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(cidade, codigo, data, nomeEvento);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EventoDto other = (EventoDto) obj;
-		return Objects.equals(cidade, other.cidade) && Objects.equals(codigo, other.codigo)
-				&& Objects.equals(data, other.data) && Objects.equals(nomeEvento, other.nomeEvento);
 	}
 
 }

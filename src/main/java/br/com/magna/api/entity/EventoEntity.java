@@ -2,7 +2,6 @@ package br.com.magna.api.entity;
 
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Objects;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -28,13 +27,6 @@ public class EventoEntity implements Serializable {
 	private String cidade;
 
 	public EventoEntity() {
-	}
-
-	public EventoEntity(Long id, int codigo, String nomeEvento, String cidade) {
-		this.id = id;
-		this.codigo = codigo;
-		this.nomeEvento = nomeEvento;
-		this.cidade = cidade;
 	}
 
 	public int getCodigo() {
@@ -77,28 +69,4 @@ public class EventoEntity implements Serializable {
 		return cidade;
 	}
 
-	@Override
-	public String toString() {
-		return "EventoEntity [id=" + id + ", codigo=" + codigo + ", nomeEvento=" + nomeEvento + ", data=" + data
-				+ ", cidade=" + cidade + "]";
-	}
-
-	@Override
-	public int hashCode() {
-		return Objects.hash(cidade, codigo, data, id, nomeEvento);
-	}
-
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		EventoEntity other = (EventoEntity) obj;
-		return Objects.equals(cidade, other.cidade) && Objects.equals(codigo, other.codigo)
-				&& Objects.equals(data, other.data) && Objects.equals(id, other.id)
-				&& Objects.equals(nomeEvento, other.nomeEvento);
-	}
 }

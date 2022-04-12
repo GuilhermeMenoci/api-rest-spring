@@ -20,7 +20,6 @@ import org.springframework.http.ResponseEntity;
 
 import br.com.magna.api.controller.implementation.RestPageImpl;
 import br.com.magna.api.dto.ConvidadoDto;
-import br.com.magna.api.dto.UsuarioDto;
 import br.com.magna.api.entity.ConvidadoEntity;
 import br.com.magna.api.entity.EventoEntity;
 
@@ -146,13 +145,33 @@ class ConvidadoControllerTest extends AbstractControllerIT{
 	
 	@Test
 	@Order(7)
+	void esperaNaoSalvarUsuarioPorJaExistir() {
+
+		ConvidadoDto atividade = gerarVO();
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<ConvidadoDto> entity = new HttpEntity<ConvidadoDto>(atividade, headers);
+
+		ParameterizedTypeReference<ConvidadoDto> responseType = new ParameterizedTypeReference<>() {
+		};
+
+		ResponseEntity<ConvidadoDto> response = restTemplate.exchange(path.toString(), HttpMethod.POST, entity,
+				responseType);
+
+		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
+	
+	@Test
+	@Order(8)
 	void esperaDeletarConvidadoPorCpf() {
 		path.append("14126816003");
 
-		ParameterizedTypeReference<UsuarioDto> responseType = new ParameterizedTypeReference<UsuarioDto>() {
+		ParameterizedTypeReference<ConvidadoDto> responseType = new ParameterizedTypeReference<ConvidadoDto>() {
 		};
 
-		ResponseEntity<UsuarioDto> response = restTemplate.exchange(path.toString(), HttpMethod.DELETE, null,
+		ResponseEntity<ConvidadoDto> response = restTemplate.exchange(path.toString(), HttpMethod.DELETE, null,
 				responseType);
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}

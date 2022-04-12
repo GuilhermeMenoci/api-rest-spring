@@ -27,7 +27,6 @@ public class ConvidadoService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	// Listando todos os eventos com Page(pagina e quantidade)
 	public Page<ConvidadoDto> listPage(Pageable paginacao) {
 
 		Page<ConvidadoEntity> convidados = convidadoRepository.findAll(paginacao);
@@ -35,7 +34,6 @@ public class ConvidadoService {
 
 	}
 
-	// Listando usuario por CPF
 	public ConvidadoDto getCpf(String cpf) {
 
 		ConvidadoEntity convidado = convidadoRepository.findByCpf(cpf)
@@ -46,19 +44,17 @@ public class ConvidadoService {
 
 	}
 
-	// Verificando se o convidado já tem um cadastro
 	public Boolean verificaConvidado(ConvidadoDto cpfConvidado) {
 		Boolean verificaConvidado = false;
 
 		if (Boolean.TRUE.equals(convidadoRepository.existsByCpf(cpfConvidado.getCpf()))) {
-			throw new ParametroInvalidoException("CPF informado é inválido!");
+			throw new ParametroInvalidoException("Já existe um cadastro para esse CPF!");
 		}
 
 		return verificaConvidado;
 
 	}
 
-	// Criando convidado
 	public ConvidadoDto createConvidadoDto(ConvidadoDto convidadoDto) {
 
 		verificaConvidado(convidadoDto);
@@ -71,7 +67,6 @@ public class ConvidadoService {
 
 	}
 
-	// Atualizando convidado
 	public ConvidadoDto update(String cpf, ConvidadoDto convidadoDto) {
 
 		ConvidadoEntity convidado = convidadoRepository.findByCpf(cpf)
@@ -86,7 +81,6 @@ public class ConvidadoService {
 
 	}
 
-	// Deletando um convidado
 	public void delete(String cpf) {
 
 		convidadoRepository.deleteByCpf(cpf);
@@ -94,7 +88,6 @@ public class ConvidadoService {
 
 	}
 
-	// Valindo se o CPF existe
 	public boolean validCpf(String cpf) {
 		CPFValidator cpfValidator = new CPFValidator();
 
@@ -102,9 +95,6 @@ public class ConvidadoService {
 		return true;
 	}
 
-	// CONVERSORES//
-
-	// Construtor do ConvidadoDto
 	public ConvidadoDto convidadoDto(ConvidadoEntity convidado) {
 		ConvidadoDto dto = new ConvidadoDto();
 		dto.setCpf(convidado.getCpf());
@@ -113,17 +103,14 @@ public class ConvidadoService {
 		return dto;
 	}
 
-	// Conversor ModelMapper de Entity para Dto
 	public ConvidadoDto convertDto(ConvidadoEntity convidado) {
 		return modelMapper.map(convidado, ConvidadoDto.class);
 	}
 
-	// Conversor ModelMapper de Entity para Dto
 	public ConvidadoEntity convertEntity(ConvidadoDto convidado) {
 		return modelMapper.map(convidado, ConvidadoEntity.class);
 	}
 
-	// Conversor Page de Entity para Dto
 	public Page<ConvidadoDto> pageDto(Page<ConvidadoEntity> convidadoEntity) {
 		return convidadoEntity.map(this::convidadoDto);
 	}

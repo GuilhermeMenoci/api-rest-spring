@@ -26,7 +26,6 @@ public class UsuarioService {
 	@Autowired
 	private ModelMapper modelMapper;
 
-	// Listando todos os eventos com Page(pagina e quantidade)
 	public Page<UsuarioDto> listPage(Pageable paginacao) {
 
 		Page<UsuarioEntity> usuarios = usuarioRepository.findAll(paginacao);
@@ -35,7 +34,6 @@ public class UsuarioService {
 
 	}
 
-	// Listando usuario por login
 	public UsuarioDto getLogin(String login) {
 
 		UsuarioEntity usuarioOptional = usuarioRepository.findByLogin(login)
@@ -44,7 +42,6 @@ public class UsuarioService {
 
 	}
 
-	// Verificando se o usuario já tem um cadastro
 	public Boolean verificaUsuario(UsuarioDto loginUsuario) {
 		Boolean verificaUser = false;
 
@@ -58,7 +55,6 @@ public class UsuarioService {
 
 	}
 
-	// Criando usuario
 	public UsuarioDto createUsuarioDto(UsuarioDto usuarioDto) {
 
 		verificaUsuario(usuarioDto);
@@ -70,7 +66,6 @@ public class UsuarioService {
 
 	}
 
-	// Atualizando evento
 	public UsuarioDto update(String login, UsuarioDto usuarioDto) {
 
 		UsuarioEntity usuario = usuarioRepository.findByLogin(login)
@@ -85,7 +80,6 @@ public class UsuarioService {
 
 	}
 
-	// Deletando um usuario
 	public void delete(String login) {
 
 		usuarioRepository.deleteByLogin(login);
@@ -93,28 +87,12 @@ public class UsuarioService {
 
 	}
 
-	// Construtor do UsuarioDto
-	public UsuarioDto usuarioDto(UsuarioEntity usuario) {
-		UsuarioDto dto = new UsuarioDto();
-		dto.setLogin(usuario.getLogin());
-		dto.setSenha(usuario.getSenha());
-		dto.setEvento(usuario.getEvento());
-		return dto;
-	}
-
-	// Conversor ModelMapper de Entity para Dto
 	public UsuarioDto convertDto(UsuarioEntity usuario) {
 		return modelMapper.map(usuario, UsuarioDto.class);
 	}
 
-	// Conversor ModelMapper de Entity para Dto
 	public UsuarioEntity convertEntity(UsuarioDto usuario) {
 		return modelMapper.map(usuario, UsuarioEntity.class);
-	}
-
-	// Conversor Page de Entity para Dto
-	public Page<UsuarioDto> pageDto(Page<UsuarioEntity> usuarioEntity) {
-		return usuarioEntity.map(this::usuarioDto);
 	}
 
 }

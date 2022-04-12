@@ -145,6 +145,26 @@ class UsuarioControllerTest extends AbstractControllerIT {
 
 	@Test
 	@Order(7)
+	void esperaNaoSalvarUsuarioPorJaExistir() {
+
+		UsuarioDto atividade = gerarVO();
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<UsuarioDto> entity = new HttpEntity<UsuarioDto>(atividade, headers);
+
+		ParameterizedTypeReference<UsuarioDto> responseType = new ParameterizedTypeReference<>() {
+		};
+
+		ResponseEntity<UsuarioDto> response = restTemplate.exchange(path.toString(), HttpMethod.POST, entity,
+				responseType);
+
+		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
+	
+	@Test
+	@Order(8)
 	void esperaDeletarUsuarioPorLogin() {
 		path.append("teste");
 

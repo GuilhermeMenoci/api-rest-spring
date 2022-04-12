@@ -35,7 +35,6 @@ public class EventoService {
 
 	}
 
-	// Listando evento por codigo
 	public EventoDto getCodigo(int codigo) {
 
 		EventoEntity eventoOptional = eventoRepository.findByCodigo(codigo)
@@ -45,7 +44,6 @@ public class EventoService {
 
 	}
 
-	// Verificando se o evento já tem um cadastro
 	public Boolean verificaEvento(EventoDto codigoEvento) {
 		Boolean verificaEvento = false;
 
@@ -58,7 +56,6 @@ public class EventoService {
 
 	}
 
-	// Criando um evento
 	public EventoDto createEventoDto(EventoDto eventoDto) {
 
 		verificaEvento(eventoDto);
@@ -70,7 +67,6 @@ public class EventoService {
 
 	}
 
-	// Atualizando evento
 	public EventoDto update(int codigo, EventoDto eventoDto) {
 
 		EventoEntity evento = eventoRepository.findByCodigo(codigo)
@@ -85,7 +81,6 @@ public class EventoService {
 
 	}
 
-	// Deletando um evento
 	public void delete(int codigo) {
 
 		eventoRepository.deleteByCodigo(codigo);
@@ -93,28 +88,12 @@ public class EventoService {
 
 	}
 
-	// Construtor do EventoDto
-	public EventoDto eventoDto(EventoEntity evento) {
-		EventoDto dto = new EventoDto();
-		dto.setCodigo(evento.getCodigo());
-		dto.setNomeEvento(evento.getNomeEvento());
-		dto.setCidade(evento.getCidade());
-		return dto;
-	}
-
-	// Conversor ModelMapper de Entity para Dto
 	public EventoDto convertDto(EventoEntity evento) {
 		return modelMapper.map(evento, EventoDto.class);
 	}
 
-	// Conversor ModelMapper de Entity para Dto
 	public EventoEntity convertEntity(EventoDto evento) {
 		return modelMapper.map(evento, EventoEntity.class);
-	}
-
-	// Conversor Page de Entity para Dto
-	public Page<EventoDto> pageDto(Page<EventoEntity> eventoEntity) {
-		return eventoEntity.map(this::eventoDto);
 	}
 
 }

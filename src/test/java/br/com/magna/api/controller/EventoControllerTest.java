@@ -143,6 +143,26 @@ class EventoControllerTest extends AbstractControllerIT {
 
 	@Test
 	@Order(7)
+	void esperaNaoSalvarEventoPorJaExistir() {
+
+		EventoDto atividade = gerarVO();
+
+		HttpHeaders headers = new HttpHeaders();
+		headers.setContentType(MediaType.APPLICATION_JSON);
+
+		HttpEntity<EventoDto> entity = new HttpEntity<EventoDto>(atividade, headers);
+
+		ParameterizedTypeReference<EventoDto> responseType = new ParameterizedTypeReference<>() {
+		};
+
+		ResponseEntity<EventoDto> response = restTemplate.exchange(path.toString(), HttpMethod.POST, entity,
+				responseType);
+
+		assertEquals(HttpStatus.BAD_REQUEST, response.getStatusCode());
+	}
+	
+	@Test
+	@Order(8)
 	void esperaDeletarEventoPorCodigo() {
 		path.append("3");
 
@@ -153,6 +173,8 @@ class EventoControllerTest extends AbstractControllerIT {
 				responseType);
 		assertEquals(HttpStatus.OK, response.getStatusCode());
 	}
+	
+	
 
 	private EventoDto alterarVO() {
 
